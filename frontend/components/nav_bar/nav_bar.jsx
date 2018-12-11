@@ -7,7 +7,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const nav = this.props.currentUser ? (
+    const nav = currentUser ? (
       <div>
         <button onClick={logout}>Log Out</button>
       </div>
