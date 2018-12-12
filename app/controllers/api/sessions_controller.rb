@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render 'api/users/show'
     else  
-      render json: ["Invalid Email or Password"], status: 422
+      render json: ["The email or phone number you've entered doesn't match any account."], status: 422
     end 
   end 
 

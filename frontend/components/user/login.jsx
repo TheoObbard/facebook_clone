@@ -24,6 +24,9 @@ class Login extends React.Component {
   }
 
   render() {
+    const errors = this.props.errors.map(error => <li key={error}>{error}</li>)
+
+
     return (
       <div>
         <h1>Sign In</h1>
@@ -40,6 +43,7 @@ class Login extends React.Component {
 
           <button type='submit' onClick={this.handleSubmit}>Sign In</button>
         </form>
+        {errors}
       </div>
     );
   }

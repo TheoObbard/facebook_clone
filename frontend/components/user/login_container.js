@@ -8,4 +8,10 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default connect(null, mapDispatchToProps)(Login)
+const mapStateToProps = state => {
+  return {
+    errors: state.errors.user
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
