@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Login from '../user/login_container';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -7,14 +8,16 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const nav = currentUser ? (
+    const nav = window.currentUser ? (
       <div>
-        <button onClick={logout}>Log Out</button>
+        {/* <button onClick={logout}>Log Out</button> */}
+        <h1>Someone is signed in!</h1>
+        <button onClick={this.props.logout}>Log out</button>
       </div>
     ) : (
       <div>
         <h1>facebook</h1>
-        <Link to='/login'>Login</Link>
+        <Login />
       </div>
     )
 
