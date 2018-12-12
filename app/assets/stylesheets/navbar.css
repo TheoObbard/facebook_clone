@@ -10,13 +10,87 @@
 }
 
 .nav {
-  background-color: #4267b2;
-  border-bottom: 1px solid #29487d;
+  background-color: #4469B0;
+  border-bottom: 1px solid #2A497B;
   color: #fff;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  height: 42px;
+  left: 10px;
 }
 
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.triangle {
+  height:0px;
+  width:0px;
+  border:none;
+  border-top:5px solid #1B2A46;
+  border-left:5px solid rgba(0,0,0,0);
+  border-right:5px solid rgba(0,0,0,0);
+}
+
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  height: 100%;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin-bottom: 0px; 
+  height: 43px;
+}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  height: 30px;
+  padding-top: 100px;
+  margin-top: 5px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.dropdown-content button {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+}
+
+.dropdown_content button:hover {
+  background-color: #FFFFFF;
+  border: 2px solid #B2B2B2;
+  box-shadow: #2A497B;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+}
+
+.fb_logo_small {
+  background-image: url(fb_logo_small.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 34px;
+  width: 34px;
+  margin-left: 25px;
+}
 .facebook_logo {
   background-image: url(facebook_logo.png);
   background-size: contain;

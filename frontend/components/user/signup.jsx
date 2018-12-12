@@ -94,8 +94,16 @@ class Signup extends React.Component {
               </div>
 
               <div className='button_container'>
-                <button className='sign_up' type='submit' onClick={this.handleSubmit}>Sign Up</button>
-                <button className='demo_login' type='submit' onClick={this.handleDemo}>Demo Login</button>
+                <button 
+                  className='sign_up' 
+                  type='submit' 
+                  onClick={this.handleSubmit}>Sign Up
+                </button>
+                <button 
+                  className='demo_login' 
+                  type='submit' 
+                  onClick={this.handleDemo}>Demo Login
+                </button>
               </div>
               {errors}
             </form>
@@ -104,12 +112,18 @@ class Signup extends React.Component {
         <div className='footer'>
           <div className='github'>
             <div className='github_logo'></div>
-            <a className='github_text' href="https://github.com/TheoObbard">Github</a>
+            <a 
+              className='github_text' 
+              href="https://github.com/TheoObbard">Github
+            </a>
           </div>
 
           <div className='linkedin'>
             <div className='linkedin_logo'></div>
-            <a className='linkedin_text' href="https://www.linkedin.com/in/theo-obbard-41889780/">LinkedIn</a>
+            <a 
+              className='linkedin_text' 
+              href="https://www.linkedin.com/in/theo-obbard-41889780/">LinkedIn
+            </a>
           </div>
         </div>
       </div>

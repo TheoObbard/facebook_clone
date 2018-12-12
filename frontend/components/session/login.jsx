@@ -24,7 +24,7 @@ class Login extends React.Component {
   }
 
   render() {
-    const errors = this.props.errors.map(error => <li className='login_errors' key={error}>{error}</li>)
+    const errors = this.props.errors.map( error => <li className='login_errors' key={error}>{error}</li> )
 
 
     return (

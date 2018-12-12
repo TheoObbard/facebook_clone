@@ -11,9 +11,25 @@ class NavBar extends React.Component {
   render() {
     const nav = this.props.currentUser ? (
       <div className='nav'>
-        {/* <button onClick={logout}>Log Out</button> */}
-        <h1>Someone is signed in!</h1>
-        <button onClick={this.props.logout}>Log out</button>
+        <Link 
+          to='/' 
+          className='fb_logo_small' 
+        />
+
+        <div className='dropdown'>
+          <button className='dropbtn'>
+            <div className='triangle'></div>
+          </button>
+          <div className='dropdown_content'>
+            <Link 
+              to='/' 
+              onClick={this.props.logout}
+              >Log out
+            </Link> 
+          </div>
+        </div>
+
+
       </div>
     ) : (
       <div className='loggedout_menubar_container'>
