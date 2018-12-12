@@ -15,21 +15,19 @@ class NavBar extends React.Component {
           to='/' 
           className='fb_logo_small' 
         />
-
         <div className='dropdown'>
           <button className='dropbtn'>
             <div className='triangle'></div>
           </button>
           <div className='dropdown_content'>
             <Link 
+              className='logout_text'
               to='/' 
               onClick={this.props.logout}
-              >Log out
+              >Log Out
             </Link> 
           </div>
         </div>
-
-
       </div>
     ) : (
       <div className='loggedout_menubar_container'>

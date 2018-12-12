@@ -17,14 +17,12 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  overflow: hidden;
   height: 42px;
   left: 10px;
 }
 
 .dropdown {
   float: right;
-  overflow: hidden;
 }
 
 .triangle {
@@ -41,12 +39,21 @@
   border: none;
   outline: none;
   color: white;
-  height: 100%;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit; 
   margin-bottom: 0px; 
   height: 43px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.logout_text {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
 }
 
 .dropdown_content {
@@ -55,10 +62,11 @@
   background-color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 3px;
   z-index: 1;
+  left: -120px;
   height: 30px;
-  padding-top: 100px;
-  margin-top: 5px;
+  padding-top: 20px;
   font-size: 12px;
   text-decoration: none;
 }
@@ -84,7 +92,7 @@
 }
 
 .fb_logo_small {
-  background-image: url(fb_logo_small.png);
+  background-image: image-url('fb_logo_small.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 34px;
@@ -92,7 +100,7 @@
   margin-left: 25px;
 }
 .facebook_logo {
-  background-image: url(facebook_logo.png);
+  background-image: image-url('facebook_logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 34px;

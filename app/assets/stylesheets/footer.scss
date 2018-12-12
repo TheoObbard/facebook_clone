@@ -31,7 +31,7 @@
 }
 
 .github {
-  background-image: url(github.png);
+  background-image: image-url('github.png');
   background-size: contain;
   background-repeat: no-repeat;
   align-items: center;
@@ -40,7 +40,7 @@
 } 
 
 .linkedin {
-  background-image: url(linkedin.png);
+  background-image: image-url('linkedin.png');
   background-size: contain;
   background-repeat: no-repeat;
   align-items: center;

@@ -3,7 +3,6 @@
   flex-direction: row;
   margin: auto;
   width: 980px;
-  /* height: 600px; */
   color: #666666;
 } 
 
@@ -53,15 +52,15 @@ h1 {
 }
 
 .update_icon {
-  background-image: url(updates.png);
+  background-image: image-url('updates.png');
 }
 
 .new_icon {
-  background-image: url(new_icon.png);
+  background-image: image-url('new_icon.png');
 }
 
 .find_icon {
-  background-image: url(find.png);
+  background-image: image-url('find.png');
 }
 
 .sign_up_text {
