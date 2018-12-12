@@ -27,7 +27,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -39,5 +40,9 @@
   "bugs": {
     "url": "https://github.com/TheoObbard/facebook_clone/issues"
   },
-  "homepage": "https://github.com/TheoObbard/facebook_clone#readme"
+  "homepage": "https://github.com/TheoObbard/facebook_clone#readme",
+  "engines": {
+    "node": "8.4.0",
+    "npm": "6.1.0"
+  }
 }
