@@ -1,4 +1,5 @@
 import React from 'react';
+// import Calendar from 'react-calendar'
 
 class Signup extends React.Component {
   constructor(props) {
@@ -6,9 +7,11 @@ class Signup extends React.Component {
     this.state = {
       email: '', 
       name: '', 
-      password: ''
+      password: '', 
+      birthday: new Date()
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   };
 
   handleInput(field) {
@@ -24,8 +27,14 @@ class Signup extends React.Component {
     this.props.signup(this.state)
   }
 
+  handleChange(date) {
+    this.setState({
+      birthday: date
+    });
+  }
+
   render() {
-    const errors = this.props.errors.map(error => <li key={error}>{error}</li>)
+    const errors = this.props.errors.map(error => <li className='sign_up_errors' key={error}>{error}</li>)
 
     return (
       <div className='splash_content'>
@@ -46,24 +55,46 @@ class Signup extends React.Component {
         </div>
 
         <div className='new_account'>
-          <h1>Sign Up</h1>
+          <h1 className='sign_up_text'>Sign Up</h1>
+          <h3 className='free_text'>It’s free and always will be.</h3>
           <form>
-            <label>
-              email 
-              <input type='text' value={this.state.email} onChange={this.handleInput('email')}></input>
+            <label className='form'>
+              <input 
+                className='name_input' 
+                type='text' value={this.state.name} 
+                onChange={this.handleInput('name')}
+                placeholder='Name'>
+              </input>
             </label>
 
-            <label>
-              name
-              <input type='text' value={this.state.name} onChange={this.handleInput('name')}></input>
+            <label className='form'>
+              <input 
+                className='email_input' 
+                type='text' value={this.state.email} 
+                onChange={this.handleInput('email')}
+                placeholder='Email'>
+              </input>
             </label>
 
-            <label>
-              password
-              <input type='password' value={this.state.password} onChange={this.handleInput('password')}></input>
+            <label className='form'>
+              <input 
+                className='password_input' 
+                type='password' 
+                value={this.state.password} 
+                onChange={this.handleInput('password')}
+                placeholder='Password'>
+              </input>
             </label>
 
-            <button type='submit' onClick={this.handleSubmit}>Sign Up</button>
+            <div className='disclaimer'>
+              By clicking Sign Up, you agree to our Terms, Data Policy <br/>
+              and Cookies Policy. You may receive SMS Notifications from<br/>
+              us and can opt out any time.
+            </div>
+
+            <div className='button_container'>
+              <button className='sign_up' type='submit' onClick={this.handleSubmit}>Sign Up</button>
+            </div>
             {errors}
           </form>
         </div>

@@ -63,3 +63,76 @@ h1 {
 .find_icon {
   background-image: url(find.png);
 }
+
+.sign_up_text {
+  font-size: 32px;
+  margin-bottom: 0px;
+  color: #333;
+  line-height: 10px;
+}
+
+.free_text {
+  margin-bottom: 20px;
+  font-size: 19px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.name_input, .email_input, .password_input {
+  width: 371px;
+  height: 21px;
+  padding: 8px 10px 8px 10px;
+  border: 1px solid #bdc7d8;
+  border-radius: 5px;
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: black;
+  margin-bottom: 12px;
+}
+
+.form {
+}
+
+.sign_up {
+  font-size: 19px;
+  color: white;
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+  font-weight: bold !important;
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #69a74e;
+  box-shadow: inset 0 1px 1px #a4e388;
+  border-color: #3D6D27 !important;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+  height: 37px; 
+  width: 194px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sign_up:hover {
+  background: linear-gradient(#8bca70, #578843);
+}
+
+.button_container {
+  width: 400px;
+}
+
+.disclaimer {
+  color: #777;
+  font-size: 11px;
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+  line-height: 14px;
+  margin-top: 21px;
+  margin-bottom: 11px;
+}
+
+.sign_up_errors {
+  color: #BC4C4C;
+  list-style: none;
+  line-height: 20px;
+  font-size: 14px;
+}

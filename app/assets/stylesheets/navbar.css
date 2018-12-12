@@ -1,6 +1,7 @@
 .loggedout_menubar_container {
-  background-color: #3C5B96;
+  /* background-color: #3C5B96; */
   border-bottom: 1px solid #29487d;
+  background: linear-gradient(#4F6AA0, #3C5B96);
   color: #fff;
   display: flex;
   flex-direction: row;
@@ -57,6 +58,7 @@
   border-radius: 3px;
   font-family: "Lucida Grande", sans-serif;
   font-weight: 200;
+  width: 50px;
 }
 
 .login_button:hover {

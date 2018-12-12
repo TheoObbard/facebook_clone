@@ -22,3 +22,10 @@
  .app_container {
    height: 100%;
  }
+
+ h3 {
+    font-family: 'Freight Sans', Helvetica, Arial, sans-serif !important;
+    font-weight: normal !important;
+    letter-spacing: normal;
+    text-rendering: optimizelegibility;
+ }
