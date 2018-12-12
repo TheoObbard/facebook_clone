@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../user/login_container';
+// import facebook_logo from '../../../app/assets/images/facebook_logo.png';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -8,22 +9,16 @@ class NavBar extends React.Component {
     this.state = { currentUser: this.props.currentUser }
   }
 
-  // componentDidUpdate(oldprops) {
-  //   if (oldprops.currentUser !== this.props.currentUser) {
-  //     this.render()
-  //   }
-  // }
-
   render() {
     const nav = this.props.currentUser ? (
-      <div>
+      <div className='nav'>
         {/* <button onClick={logout}>Log Out</button> */}
         <h1>Someone is signed in!</h1>
         <button onClick={this.props.logout}>Log out</button>
       </div>
     ) : (
-      <div>
-        <h1>facebook</h1>
+      <div className='loggedout_menubar_container'>
+        <div className='facebook_logo'></div>
         <Login />
       </div>
     )

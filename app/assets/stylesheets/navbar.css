@@ -1,0 +1,72 @@
+.loggedout_menubar_container {
+  background-color: #3C5B96;
+  border-bottom: 1px solid #29487d;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 82px;
+}
+
+.nav {
+  background-color: #4267b2;
+  border-bottom: 1px solid #29487d;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.facebook_logo {
+  background-image: url(facebook_logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 34px;
+  width: 170px;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login_input {
+  border: 1px solid black;
+  height: 24px;
+  width: 150px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.input_label {
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+  font-size: 12px;
+}
+
+.login_button {
+  margin: 12px;
+  height: 28px;
+  margin-top: 29px;
+  background-color: #4469B0;
+  border-color: #29487d;
+  color: white;
+  border-radius: 3px;
+  font-family: "Lucida Grande", sans-serif;
+  font-weight: 200;
+}
+
+.login_button:hover {
+  background-color: #3C5B96;
+}
+
+.forgot_account {
+  color: #91A6C5;
+}
+
+.forgot_account:hover {
+  color: #91A6C5;
+  text-decoration: underline;
+}
