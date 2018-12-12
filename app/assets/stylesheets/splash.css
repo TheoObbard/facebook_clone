@@ -3,7 +3,7 @@
   flex-direction: row;
   margin: auto;
   width: 980px;
-  height: 543px;
+  /* height: 600px; */
   color: #666666;
 } 
 
@@ -108,7 +108,7 @@ h1 {
   position: relative;
   text-shadow: 0 1px 2px rgba(0,0,0,.5);
   height: 37px; 
-  width: 194px;
+  width: 188px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -117,8 +117,37 @@ h1 {
   background: linear-gradient(#8bca70, #578843);
 }
 
+.demo_login {
+  font-size: 19px;
+  color: white;
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+  font-weight: bold !important;
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #69a74e;
+  box-shadow: inset 0 1px 1px #a4e388;
+  border-color: #3D6D27 !important;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+  height: 37px; 
+  width: 188px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.demo_login:hover {
+  background: linear-gradient(#8bca70, #578843);
+}
+
+
 .button_container {
   width: 400px;
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .disclaimer {

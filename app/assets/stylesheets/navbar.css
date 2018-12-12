@@ -1,5 +1,4 @@
 .loggedout_menubar_container {
-  /* background-color: #3C5B96; */
   border-bottom: 1px solid #29487d;
   background: linear-gradient(#4F6AA0, #3C5B96);
   color: #fff;
@@ -72,4 +71,12 @@
 .forgot_account:hover {
   color: #91A6C5;
   text-decoration: underline;
+}
+
+.login_errors {
+  color: #BC4C4C;
+  list-style: none;
+  line-height: 20px;
+  font-size: 14px;
+  position: absolute;
 }
