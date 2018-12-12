@@ -1,0 +1,65 @@
+.splash_content {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 980px;
+  height: 543px;
+  color: #666666;
+} 
+
+.blurb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 565px;
+  height: 378px;
+  padding-top: 20px;
+  margin-right: 16px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif; 
+  padding-top: 42px;
+  padding-bottom: 24px;
+  line-height: 1.34;
+  color: #333333;
+}
+
+.bold_text {
+  font-weight: bold;
+  color: black;
+}
+
+.new_account {
+  width: 399px;
+}
+
+.blurbie {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 14px;
+  padding-bottom: 10px;
+}
+
+.update_icon, .new_icon, .find_icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 56px;
+  width: 56px;
+  margin-right: 13px;
+}
+
+.update_icon {
+  background-image: url(updates.png);
+}
+
+.new_icon {
+  background-image: url(new_icon.png);
+}
+
+.find_icon {
+  background-image: url(find.png);
+}

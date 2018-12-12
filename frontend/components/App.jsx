@@ -1,5 +1,5 @@
 import React from 'react';
-import Signup from './session/signup_container';
+import Signup from './user/signup_container';
 import NavBar from './nav_bar/nav_bar_container';
 import { Switch, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
@@ -7,7 +7,7 @@ import NewsFeed from './news_feed/news_feed';
 
 const App = () => {
   return (
-    <div>
+    <div className='app_container'>
       <NavBar />
       <Switch>
         <AuthRoute path='/signup' component={Signup} />

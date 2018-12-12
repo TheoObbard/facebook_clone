@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Login from '../user/login_container';
+import Login from '../session/login_container';
 // import facebook_logo from '../../../app/assets/images/facebook_logo.png';
 
 class NavBar extends React.Component {

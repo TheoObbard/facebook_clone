@@ -16,4 +16,9 @@
 
  body {
     background-color: rgb(237, 240, 245);
+    height: 100%;
+ }
+
+ .app_container {
+   height: 100%;
  }
