@@ -5,10 +5,17 @@ import Login from '../user/login_container';
 class NavBar extends React.Component {
   constructor(props) {
     super(props)
+    this.state = { currentUser: this.props.currentUser }
   }
 
+  // componentDidUpdate(oldprops) {
+  //   if (oldprops.currentUser !== this.props.currentUser) {
+  //     this.render()
+  //   }
+  // }
+
   render() {
-    const nav = window.currentUser ? (
+    const nav = this.props.currentUser ? (
       <div>
         {/* <button onClick={logout}>Log Out</button> */}
         <h1>Someone is signed in!</h1>

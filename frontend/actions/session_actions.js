@@ -5,20 +5,20 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 export const login = (user) => dispatch => {
-  SessionApiUtil.signin(user).then(
+  return SessionApiUtil.signin(user).then(
     (currentUser) => dispatch(receiveCurrentUser(currentUser))
   )
 };
 
 export const signup = (user) => dispatch => {
-  SessionApiUtil.signup(user).then(
+  return SessionApiUtil.signup(user).then(
     (currentUser) => dispatch(receiveCurrentUser(currentUser)), 
     (errors) => dispatch(receiveErrors(errors.responseJSON))
   )
 };
 
 export const logout = () => dispatch => {
-  SessionApiUtil.logout().then(
+  return SessionApiUtil.logout().then(
     () => dispatch(logoutCurrentUser())
   )
 };
