@@ -1,6 +1,7 @@
 .page {
-  width: 981px;
-  margin: 0px 127.5px 0px 127.5px;
+  width: 100%;
+  // margin: 0px 127.5px 0px 127.5px;
+  margin-left: 10%;
 }
 
 .cover_photo {
@@ -12,6 +13,15 @@
   border-left: 1px solid rgba(0, 0, 0, .3);
   border-right: 1px solid rgba(0, 0, 0, .3);
 
+}
+
+.hover_profile_pic {
+  height: 168px;
+  width: 168px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
 }
 
 .profile_pic {
@@ -26,8 +36,9 @@
   border-radius: 50%;
 }
 
-.update_profile_pic {
-  display: hidden;
+.hover_profile_pic:hover {
+  z-index: 3;
+  background-color: rgba(0,0,0,0.5); 
 }
 
 // .profile_pic:hover .update_profile_pic {

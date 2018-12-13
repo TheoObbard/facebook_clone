@@ -10,14 +10,21 @@ class Head extends React.Component {
     this.props.fetchUser(this.props.userId)
   };
 
+  componentDidUpdate(oldProps) {
+    if (this.props.match.params.userId !== oldProps.match.params.userId) {
+      this.props.fetchUser(this.props.match.params.userId)
+    }
+  };
+
   render () {
     return (
       <div className='page'>
         <div className='cover_photo'>
           <h1 className='user_name'>{this.props.user.name}</h1>
           <div className='profile_pic_border'>
-            <div className='update_profile_pic'></div>
-            <div className='profile_pic'></div>
+            <div className='profile_pic'>
+              <div className='hover_profile_pic'></div>
+            </div>
           </div>
         </div>
         <ul className='profile_nav'>

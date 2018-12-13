@@ -10,16 +10,18 @@ class Info extends React.Component {
       return (<h1></h1>)
     }
  
-    var birthday;
-    var job;
-    var location;
-    var relationship_stat;
+    let birthday;
+    let job;
+    let location;
+    let relationship_stat;
 
     if (this.props.user.birthday) {
+      let newDate = new Date(this.props.user.birthday)
+     
       birthday = (
         <div className='user_info_item'>
           <div className='birthday_icon'></div>
-          <li>Born on {this.props.user.birthday}</li>
+          <li>Born on {newDate.getMonth()}/{newDate.getDate()}/{newDate.getFullYear()}</li>
         </div>
         )
     }
