@@ -4,15 +4,16 @@ import { Redirect, Route, withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
   return {
-    loggedIn: Boolean(state.session.id)
+    loggedIn: Boolean(state.session.id), 
+    currentUserId: state.session.id
   }
 };
 
-const Auth = ({ loggedIn, path, component: Component }) => (
+const Auth = ({ loggedIn, currentUserId, path, component: Component }) => (
   <Route 
     path={path}
     render={(props) => (
-      loggedIn ? <Redirect to='/' /> : <Component {...props} />
+      loggedIn ? <Redirect to={`/user/${currentUserId}`} /> : <Component {...props} />
     )}
   />
 );

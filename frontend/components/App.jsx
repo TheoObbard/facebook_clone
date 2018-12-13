@@ -12,11 +12,14 @@ const App = () => {
       <NavBar />
       <Switch>
         <AuthRoute path='/signup' component={Signup} />
-        <ProtectedRoute exact path='/' component={Head} />
-        <Redirect to='/' />
+        <ProtectedRoute exact path='/user/:userId' component={Head} />
+        <AuthRoute path='/' component={Head} />
+        <Redirect to='/' component={Head}/>
       </Switch>
     </div>
   )
 };
 
 export default App;
+
+// { `/user/${props.store.session.id}` }
