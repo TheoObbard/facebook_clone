@@ -6,25 +6,51 @@ class Info extends React.Component {
   }
 
   render() {
-    const data = this.props.map( dataType => {
-      switch (dataType) {
-        case 'birthday':
-          return (<li>Born on {this.props.dataType}</li>)
-        case 'job':
-          return (<li>{this.props.dataType} at {this.props.workplace}</li>)
-        case 'location':
-          return (<li>Lives in {this.props.dataType}</li>)
-        case 'relationship_stat':
-          return (<li>{this.props.dataType}</li>)
-        default:
-          break;
-      }
-    })
+    if (this.props.user.id === undefined) {
+      return (<h1></h1>)
+    }
+ 
+    var birthday;
+    var job;
+    var location;
+    var relationship_stat;
+
+    if (this.props.user.birthday) {
+      birthday = (<li>Born on {this.props.user.birthday}</li>)
+    }
+
+    if (this.props.user.job) {
+      job = (<li>{this.props.user.job} at {this.props.user.workplace}</li>)
+    } 
+
+    if (this.props.user.location) {
+      location = (<li>Lives in {this.props.user.location}</li>)
+    }
+
+    if (this.props.user.relationship_stat) {
+      relationship_stat = (<li>{this.props.user.relationship_stat}</li>)
+    }
+
     return (
       <div>
-        <ul>
-          {data}
-        </ul>
+        <div className='intro'>
+          <h3>Intro</h3>
+          <ul>
+            {/* {data} */}
+            {birthday}
+            {job}
+            {location}
+            {relationship_stat}
+          </ul>
+        </div>
+
+        <div className='photos'>
+          <h3>Photos</h3>
+        </div>
+
+        <div className='friends'>
+          <h3>Friends</h3>
+        </div>
       </div>
     )
   }

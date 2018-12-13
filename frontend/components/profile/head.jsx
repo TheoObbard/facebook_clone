@@ -14,8 +14,10 @@ class Head extends React.Component {
     return (
       <div className='page'>
         <div className='cover_photo'>
-          <h1>{this.props.user.name}</h1>
-          <div className='profile_pic'></div>
+          <h1 className='user_name'>{this.props.user.name}</h1>
+          <div className='profile_pic_border'>
+            <div className='profile_pic'></div>
+          </div>
         </div>
         <ul>
           <li>Timeline</li>
@@ -23,7 +25,7 @@ class Head extends React.Component {
           <li>Photos</li>
         </ul>
 
-        <Info props={this.props.user} />
+        {/* <Info user={this.props.user} /> */}
       </div>
     )
   };

@@ -1,0 +1,36 @@
+.page {
+  background-color: red;
+  width: 981px;
+  margin: 0px 127.5px 0px 127.5px;
+}
+
+.cover_photo {
+  background-color: blue;
+  width: 851px;
+  height: 315px;
+}
+
+.profile_pic {
+  background-color: green;
+  height: 168px;
+  width: 168px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+}
+
+.profile_pic_border {
+  background-color: white;
+  height: 178px;
+  width: 178px;
+  position: relative;
+  top: 70px;
+  left: 18px;
+  border-radius: 50%;
+  border: 1px solid #D9D9D9;
+}
+
+.user_name {
+  color: white;
+}

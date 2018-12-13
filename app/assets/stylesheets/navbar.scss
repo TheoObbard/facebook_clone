@@ -15,7 +15,7 @@
   color: #fff;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 42px;
   left: 10px;
@@ -23,6 +23,7 @@
 
 .dropdown {
   float: right;
+  margin-right: 320px;
 }
 
 .triangle {
@@ -97,7 +98,7 @@
   background-repeat: no-repeat;
   height: 34px;
   width: 34px;
-  margin-left: 25px;
+  margin-left: 105px;
 }
 .facebook_logo {
   background-image: image-url('facebook_logo.png');
