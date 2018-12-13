@@ -1,7 +1,16 @@
 .page {
-  width: 100%;
+  width: 90%;
   // margin: 0px 127.5px 0px 127.5px;
   margin-left: 10%;
+}
+
+.cover_photo_hover {
+  width: 851px;
+  height: 315px;
+  position: absolute;
+  top: 0px;
+  left: 140px;
+  z-index: 3;
 }
 
 .cover_photo {
@@ -12,7 +21,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, .3);
   border-left: 1px solid rgba(0, 0, 0, .3);
   border-right: 1px solid rgba(0, 0, 0, .3);
-
 }
 
 .hover_profile_pic {
@@ -36,9 +44,37 @@
   border-radius: 50%;
 }
 
+.update_cov {
+  position: absolute;
+  font-size: 18px;
+  color: white;
+  margin-top: 120px;
+  margin-left: 40px;
+  padding: 10px;
+  display: none;
+}
+
+.cover_photo_hover:hover .update_cov {
+  display: block;
+  z-index: 3;
+  background-color: rgba(0,0,0,0.7); 
+}
+
+.update_pro {
+  display: none;
+  padding-top: 70px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
 .hover_profile_pic:hover {
   z-index: 3;
   background-color: rgba(0,0,0,0.5); 
+}
+
+.hover_profile_pic:hover .update_pro {
+  color: white;
+  display: block;
 }
 
 // .profile_pic:hover .update_profile_pic {

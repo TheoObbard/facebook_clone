@@ -11,7 +11,7 @@ const App = () => {
     <div className='app_container'>
       <NavBar />
       <Switch>
-        {/* <AuthRoute path='/signup' component={Signup} /> */}
+        <AuthRoute path='/signup' component={Signup} />
         <ProtectedRoute exact path='/user/:userId' component={Head} />
         {/* Route exact path='/404' component={error or something} */}
         <AuthRoute exact path='/' component={Signup} />

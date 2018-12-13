@@ -15,6 +15,14 @@ class NavBar extends React.Component {
           to='/' 
           className='fb_logo_small' 
         />
+        <div className='current_user_page_button'>
+          <Link
+            className='current_user_button_link'
+            to='/'
+            onClick={this.props.logout}
+          >{this.state.name}
+            </Link>
+        </div>
         <div className='dropdown'>
           <button className='dropbtn'>
             <div className='triangle'></div>
