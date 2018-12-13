@@ -3,8 +3,9 @@ import Head from './head';
 import { fetchUser } from '../../actions/profile_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  const defaultUser = {};
   return {
-    user: {}, 
+    user: state.entities.users[ownProps.match.params.userId] || defaultUser, 
     userId: ownProps.match.params.userId
   }
 };

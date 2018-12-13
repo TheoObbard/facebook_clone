@@ -1,4 +1,5 @@
 import React from 'react';
+import Info from './info';
 
 class Head extends React.Component {
   constructor(props) {
@@ -11,7 +12,19 @@ class Head extends React.Component {
 
   render () {
     return (
-      <h1>Here is where your cover pic and shit will go!</h1>
+      <div className='page'>
+        <div className='cover_photo'>
+          <h1>{this.props.user.name}</h1>
+          <div className='profile_pic'></div>
+        </div>
+        <ul>
+          <li>Timeline</li>
+          <li>Friends</li>
+          <li>Photos</li>
+        </ul>
+
+        <Info props={this.props.user} />
+      </div>
     )
   };
 }
