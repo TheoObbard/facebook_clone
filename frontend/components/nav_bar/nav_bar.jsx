@@ -9,20 +9,24 @@ class NavBar extends React.Component {
   }
 
   render() {
+    console.log(this.state)
+
     const nav = this.props.currentUser ? (
       <div className='nav'>
         <Link 
           to='/' 
           className='fb_logo_small' 
         />
+
         <div className='current_user_page_button'>
           <Link
             className='current_user_button_link'
-            to='/'
-            onClick={this.props.logout}
-          >{this.state.name}
+            to={`/user/${this.props.currentUser.id}`} // because id isnt defined on first visit... add conditional
+          >{this.props.currentUser.name}
             </Link>
         </div>
+        
+
         <div className='dropdown'>
           <button className='dropbtn'>
             <div className='triangle'></div>
