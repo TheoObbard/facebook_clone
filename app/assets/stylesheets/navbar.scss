@@ -57,6 +57,24 @@
   margin-left: 20px;
 }
 
+.logout_button_container {
+  padding-top: 10px;
+}
+
+.logout_button_container:hover {
+  background-color: #4469B0;
+  border-top: 1px solid #29487d;
+  border-bottom: 1px solid #29487d;
+  height: 22px;
+  padding-top: 10px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.logout_button_container:hover .logout_text {
+  color: white;
+}
+
 .dropdown_content {
   display: none;
   position: absolute;
@@ -67,7 +85,6 @@
   z-index: 1;
   left: -120px;
   height: 30px;
-  padding-top: 20px;
   font-size: 12px;
   text-decoration: none;
 }

@@ -20,12 +20,14 @@ class NavBar extends React.Component {
             <div className='triangle'></div>
           </button>
           <div className='dropdown_content'>
-            <Link 
-              className='logout_text'
-              to='/' 
-              onClick={this.props.logout}
+            <div className='logout_button_container'>
+              <Link
+                className='logout_text'
+                to='/'
+                onClick={this.props.logout}
               >Log Out
             </Link> 
+            </div>
           </div>
         </div>
       </div>
