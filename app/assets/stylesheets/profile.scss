@@ -193,3 +193,36 @@
   padding-bottom: 20px;
   padding-top: 20px;
 }
+
+.user_info_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.birthday_icon, .job_icon, .location_icon, .relationship_icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 22px;
+  width: 22px;
+  padding-right: 10px;
+}
+
+.birthday_icon {
+  background-image: image-url('birthday.png');
+}
+
+.job_icon {
+  background-image: image-url('work.png');
+}
+
+.location_icon {
+  background-image: image-url('location.png');
+}
+
+.relationship_icon {
+  background-image: image-url('relationship.png');
+  height: 19px;
+  width: 19px;
+  padding-left: 3px;
+}
