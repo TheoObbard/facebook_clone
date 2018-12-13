@@ -34,9 +34,11 @@ class Info extends React.Component {
     return (
       <div>
         <div className='intro'>
-          <h3>Intro</h3>
+          <div className='title'>
+            <div className='intro_icon'></div>
+            <h3>Intro</h3>
+          </div>
           <ul>
-            {/* {data} */}
             {birthday}
             {job}
             {location}
@@ -45,11 +47,17 @@ class Info extends React.Component {
         </div>
 
         <div className='photos'>
-          <h3>Photos</h3>
+          <div className='title'>
+            <div className='photo_icon'></div>
+            <h3>Photos</h3>
+          </div>
         </div>
 
         <div className='friends'>
-          <h3>Friends</h3>
+          <div className='title'>
+            <div className='friends_icon'></div>
+            <h3>Friends</h3>
+          </div>
         </div>
       </div>
     )

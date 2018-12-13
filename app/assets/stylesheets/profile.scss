@@ -1,17 +1,23 @@
 .page {
-  background-color: red;
   width: 981px;
   margin: 0px 127.5px 0px 127.5px;
 }
 
 .cover_photo {
-  background-color: blue;
+  background-image: image-url('temp_cover.jpg');
+  background-repeat: no-repeat;
   width: 851px;
   height: 315px;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  border-left: 1px solid rgba(0, 0, 0, .3);
+  border-right: 1px solid rgba(0, 0, 0, .3);
+
 }
 
 .profile_pic {
-  background-color: green;
+  background-image: image-url('temp_profile.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 168px;
   width: 168px;
   position: relative;
@@ -19,6 +25,22 @@
   left: 5px;
   border-radius: 50%;
 }
+
+.update_profile_pic {
+  display: hidden;
+}
+
+// .profile_pic:hover .update_profile_pic {
+//   background-color: rgba(0, 0, 0, .5);
+//   display: block;
+//   height: 168px;
+//   width: 168px;
+//   position: relative;
+//   top: 5px;
+//   left: 5px;
+//   border-radius: 50%;
+//   z-index: 1;
+// }
 
 .profile_pic_border {
   background-color: white;
@@ -32,5 +54,50 @@
 }
 
 .user_name {
+  position: relative;
   color: white;
+  text-shadow: 0px 0px 3px black;
+  left: 220px;
+  top: 225px;
+  font-weight: normal;
+}
+
+.profile_nav {
+  display: flex;
+  flex-direction: row;
+  height: 43px;
+  padding-left: 430px;
+  background-color: white;
+  width: 421.5px;
+  border: 1px solid #D3D6DB;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.profile_nav_button {
+  color: #385A97;
+  background-color: white;
+  font-size: 16px;
+  padding-top: 14px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-left: 1px solid #E9EAED;
+  border-right: 1px solid #E9EAED;
+}
+
+.profile_nav_button:hover {
+  background-color: #F5F6F7;
+}
+
+.intro, .photos, .friends {
+  width: 321px;
+  height: auto;
+  background-color: white;
+  border-radius: 3px;
+  margin-top: 15px;
+}
+
+.intro, .photos, .friends h3 {
+  color: black;
+  padding-top: 20px;
 }
