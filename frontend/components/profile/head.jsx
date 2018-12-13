@@ -18,9 +18,13 @@ class Head extends React.Component {
   };
 
   render () {
+    if (this.props.user === undefined) {
+      return null;
+    }
+
     let cover_prof;
 
-    if (this.props.user.id === this.props.currentUser.id) {
+    if (this.props.user.id === this.props.currentUser) {
       cover_prof = (
         <div className='cover_photo'>
           <div className='cover_photo_hover'><div className='update_cov'>Update Cover Photo</div></div>
@@ -43,11 +47,7 @@ class Head extends React.Component {
       )  
     }
 
-    if (this.props.currentUser.id === undefined) {
-      return null;
-    }
-
-    if (this.props.user.name === undefined) {
+    if (this.props.user === undefined) {
       return (<NotFound />)
     }
 

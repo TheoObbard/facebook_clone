@@ -5,6 +5,8 @@ import { Switch, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import NewsFeed from './news_feed/news_feed';
 import Head from './profile/head_container';
+import NotFound from './404';
+import { Route } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -13,9 +15,11 @@ const App = () => {
       <Switch>
         <AuthRoute exact path='/signup' component={Signup} />
         <ProtectedRoute exact path='/user/:userId' component={Head} />
-        {/* Route exact path='/404' component={error or something} */}
         <AuthRoute exact path='/' component={Signup} />
+        <Route path='/404' component={NotFound} />
+
         <Redirect to='/'/>
+
       </Switch>
     </div>
   )

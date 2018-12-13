@@ -5,17 +5,22 @@ import Login from '../session/login_container';
 class NavBar extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { currentUser: this.props.currentUser }
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.props.currentUser);
+    
 
-    const nav = this.props.currentUser ? (
+    const nav = (this.props.currentUser === undefined) ? (
+      <div className='loggedout_menubar_container'>
+        <div className='facebook_logo'></div>
+        <Login />
+      </div>
+    ) : (
       <div className='nav'>
-        <Link 
-          to='/' 
-          className='fb_logo_small' 
+        <Link
+          to='/'
+          className='fb_logo_small'
         />
 
         <div className='current_user_page_button'>
@@ -23,9 +28,9 @@ class NavBar extends React.Component {
             className='current_user_button_link'
             to={`/user/${this.props.currentUser.id}`} // because id isnt defined on first visit... add conditional
           >{this.props.currentUser.name}
-            </Link>
+          </Link>
         </div>
-        
+
 
         <div className='dropdown'>
           <button className='dropbtn'>
@@ -38,15 +43,10 @@ class NavBar extends React.Component {
                 to='/'
                 onClick={this.props.logout}
               >Log Out
-            </Link> 
+            </Link>
             </div>
           </div>
         </div>
-      </div>
-    ) : (
-      <div className='loggedout_menubar_container'>
-        <div className='facebook_logo'></div>
-        <Login />
       </div>
     )
 

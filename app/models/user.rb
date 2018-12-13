@@ -23,6 +23,8 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
   before_validation :ensure_session_token 
 
+  has_one_attached :photo
+
   attr_reader :password
 
   def self.find_by_credentials(email, password) 
