@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/TheoObbard/facebook_clone#readme",
   "engines": {
-    "node": "8.4.0",
-    "npm": "6.1.0"
+    "node": "8.11.4",
+    "npm": "6.4.1"
   }
 }
