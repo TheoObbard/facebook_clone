@@ -1,5 +1,6 @@
 import React from 'react';
 import Info from './info';
+import NotFound from '../404';
 
 class Head extends React.Component {
   constructor(props) {
@@ -17,8 +18,10 @@ class Head extends React.Component {
   };
 
   render () {
-    return (
-      <div className='page'>
+    let cover_prof;
+
+    if (this.props.user.id === this.props.currentUser.id) {
+      cover_prof = (
         <div className='cover_photo'>
           <div className='cover_photo_hover'><div className='update_cov'>Update Cover Photo</div></div>
           <h1 className='user_name'>{this.props.user.name}</h1>
@@ -28,6 +31,29 @@ class Head extends React.Component {
             </div>
           </div>
         </div>
+    )} else {
+      cover_prof = (
+        <div className='cover_photo'>
+          <h1 className='user_name'>{this.props.user.name}</h1>
+          <div className='profile_pic_border'>
+            <div className='profile_pic'>
+            </div>
+          </div>
+        </div>
+      )  
+    }
+
+    if (this.props.currentUser.id === undefined) {
+      return null;
+    }
+
+    if (this.props.user.name === undefined) {
+      return (<NotFound />)
+    }
+
+    return (
+      <div className='page'>
+        {cover_prof}
         <ul className='profile_nav'>
           <li className='profile_nav_button'>Timeline</li>
           <li className='profile_nav_button'>Friends</li>

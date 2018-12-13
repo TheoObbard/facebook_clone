@@ -6,7 +6,8 @@ const mapStateToProps = (state, ownProps) => {
   const defaultUser = {};
   return {
     user: state.entities.users[ownProps.match.params.userId] || defaultUser, 
-    userId: ownProps.match.params.userId
+    userId: ownProps.match.params.userId,
+    currentUser: state.session.id
   }
 };
 

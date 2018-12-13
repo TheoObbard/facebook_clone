@@ -29,3 +29,21 @@
     letter-spacing: normal;
     text-rendering: optimizelegibility;
  }
+
+ .not_found_page {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+ }
+
+ .broken_thumb {
+   background-image: image-url('404.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+   height: 400px;
+   width: 400px;
+   margin-top: 50px;
+ }
