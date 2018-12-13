@@ -4,6 +4,7 @@ import NavBar from './nav_bar/nav_bar_container';
 import { Switch, Redirect } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import NewsFeed from './news_feed/news_feed';
+import Head from './profile/head_container';
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
       <NavBar />
       <Switch>
         <AuthRoute path='/signup' component={Signup} />
-        <ProtectedRoute exact path='/' component={NewsFeed} />
+        <ProtectedRoute exact path='/' component={Head} />
         <Redirect to='/' />
       </Switch>
     </div>
