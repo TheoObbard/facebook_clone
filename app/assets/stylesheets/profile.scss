@@ -89,15 +89,107 @@
   background-color: #F5F6F7;
 }
 
-.intro, .photos, .friends {
+.intro, .photos, .friends, .answers, .language {
   width: 321px;
   height: auto;
   background-color: white;
   border-radius: 3px;
-  margin-top: 15px;
+  border: 1px solid #DDDFE2;
+  margin-top: 12px;
 }
 
-.intro, .photos, .friends h3 {
+.intro, .photos, .friends, .answers, h3 {
   color: black;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.intro_icon, .photo_icon, .friends_icon, .answers_icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  padding-right: 10px;
+}
+
+.intro_icon {
+  background-image: image-url('intro_icon.png');
+}
+
+.photo_icon {
+  background-image: image-url('photos_icon.png');
+}
+
+.friends_icon {
+  background-image: image-url('friends_icon.png');
+}
+
+.answers_icon {
+  background-image: image-url('answers_icon.png');
+}
+
+.answer_link {
+  font-size: 12px;
+  color: #385A97;
+  padding-left: 85px;
+}
+
+.answer_link:hover {
+  text-decoration: underline;
+}
+
+.answers {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.language, p {
+  font-size: 12px;
+  padding-left: 20px;
+  line-height: 15px;
+}
+
+.language {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.lang_link {
+  font-size: 12px;
+  color: #385A97;
+}
+
+.legal {
+  font-size: 12px;
+  color: #90949C;
+  width: 321px;
+  height: auto;
+  margin-top: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.legal, p {
+  line-height: 18px;
+}
+
+.fb_legal {
+  color: #616770;
+}
+
+.user_info_item, li {
+  font-size: 12px;
+  line-height: 16px;
+  color: #1D2128;
+}
+
+.custom_info {
+  padding-bottom: 20px;
   padding-top: 20px;
 }
