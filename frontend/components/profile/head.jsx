@@ -30,9 +30,11 @@ class Head extends React.Component {
           <div className='cover_photo_hover'><div className='update_cov'>Update Cover Photo</div></div>
           <h1 className='user_name'>{this.props.user.name}</h1>
           <div className='profile_pic_border'>
-            <div className='profile_pic'>
+            <div>
+              <img src={this.props.user.photoUrl} className='profile_pic' />
               <div className='hover_profile_pic'><div className='update_pro'>Update Profile Picture</div></div>
             </div>
+            
           </div>
         </div>
     )} else {
@@ -40,7 +42,8 @@ class Head extends React.Component {
         <div className='cover_photo'>
           <h1 className='user_name'>{this.props.user.name}</h1>
           <div className='profile_pic_border'>
-            <div className='profile_pic'>
+            <div>
+              <img src={this.props.user.photoUrl} className='profile_pic'></img>
             </div>
           </div>
         </div>
