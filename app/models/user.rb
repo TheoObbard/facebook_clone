@@ -34,6 +34,14 @@ class User < ApplicationRecord
     foreign_key: :requester_id, 
     class_name: :FriendRequest
 
+  has_many :friends, 
+    foreign_key: :user_one_id, 
+    class_name: :Friendship
+
+  has_many :friends,  #I am very confident this is wrong
+    foreign_key: :user_two_id, 
+    class_name: :Friendship
+
   attr_reader :password
 
   def self.find_by_credentials(email, password) 

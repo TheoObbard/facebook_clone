@@ -11,7 +11,7 @@
 
 class FriendRequest < ApplicationRecord
 
-  validates :requestee_id, :requester_id, presence :true
+  validates :requestee_id, :requester_id, presence: true
 
   belongs_to :requester, 
     foreign_key: :requester_id, 
