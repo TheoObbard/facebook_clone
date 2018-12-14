@@ -26,6 +26,14 @@ class User < ApplicationRecord
   has_one_attached :profile_picture
   has_one_attached :cover_photo
 
+  has_many :sent_friend_requests, 
+    foreign_key: :requestee_id, 
+    class_name: :FriendRequest
+
+  has_many :received_friend_requests, 
+    foreign_key: :requester_id, 
+    class_name: :FriendRequest
+
   attr_reader :password
 
   def self.find_by_credentials(email, password) 
