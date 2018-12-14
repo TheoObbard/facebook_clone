@@ -68,7 +68,11 @@ class Head extends React.Component {
                      onChange={(e) => this.handleProfileUpload(e)}
               />
             <div onClick={() => document.getElementById('upload_prof_pic').click()} 
-                 className='hover_profile_pic'><div className='update_pro'>Update Profile Picture</div></div>
+              className='hover_profile_pic'>
+              <div className='update_pro'>
+                Update Profile Picture
+              </div>
+            </div>
           </div>
         </div>
     )} else {

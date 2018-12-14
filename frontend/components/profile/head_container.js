@@ -3,7 +3,6 @@ import Head from './head';
 import { fetchUser, updateCoverPhoto, updateProfilePicture } from '../../actions/profile_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const defaultUser = {};
   return {
     user: state.entities.users[ownProps.match.params.userId], 
     userId: ownProps.match.params.userId,

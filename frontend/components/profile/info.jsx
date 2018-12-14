@@ -2,7 +2,7 @@ import React from 'react';
 
 class Info extends React.Component {
   constructor(props) {
-    super(props) // just target user here
+    super(props)
   }
 
   render() {
@@ -23,14 +23,14 @@ class Info extends React.Component {
           <div className='birthday_icon'></div>
           <li>Born on {newDate.getMonth()}/{newDate.getDate()}/{newDate.getFullYear()}</li>
         </div>
-        )
+      )
     }
 
     if (this.props.user.job) {
       job = (
         <div className='user_info_item'>
           <div className='job_icon'></div>
-          <li>{this.props.user.job} at {this.props.user.workplace}</li>
+          <li>{this.props.user.job}</li>
         </div>
       )
     } 

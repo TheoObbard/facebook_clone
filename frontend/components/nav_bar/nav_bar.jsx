@@ -7,9 +7,7 @@ class NavBar extends React.Component {
     super(props)
   }
 
-  render() {
-    console.log(this.props.currentUser);
-    
+  render() {    
     const nav = (this.props.currentUser === undefined) ? (
       <div className='loggedout_menubar_container'>
         <div className='facebook_logo'></div>
