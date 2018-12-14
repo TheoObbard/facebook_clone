@@ -30,7 +30,6 @@
   width: 851px;
   overflow: hidden;
   height: 315px;
-  // height: auto;
   object-fit: cover;
   border-bottom: 1px solid rgba(0, 0, 0, .3);
   border-left: 1px solid rgba(0, 0, 0, .3);
@@ -50,6 +49,7 @@
 .profile_pic {
   background-size: contain;
   background-repeat: no-repeat;
+  object-fit: cover;
   height: 168px;
   width: 168px;
   position: relative;

@@ -13,6 +13,12 @@ export const updateCoverPhoto = (id, formData) => dispatch => {
   )
 };
 
+export const updateProfilePicture = (id, formData) => dispatch => {
+  return UserApiUtil.updateProfilePicture(id, formData).then(
+    (user) => dispatch(recieveUser(user))
+  )
+};
+
 export const recieveUser = (user) => {
   return {
     type: RECIEVE_USER, 

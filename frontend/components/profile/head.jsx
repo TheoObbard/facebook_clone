@@ -19,13 +19,21 @@ class Head extends React.Component {
   };
 
   handleCoverUpload(e) {
-    console.log('gets here')
     const reader = new FileReader();
     const file = e.currentTarget.files[0]
     reader.readAsDataURL(file)
     const formData = new FormData();
     formData.append('user[cover_photo]', file);
     this.props.updateCoverPhoto(this.props.currentUser, formData);
+  };
+
+  handleProfileUpload(e) {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0]
+    reader.readAsDataURL(file)
+    const formData = new FormData();
+    formData.append('user[profile_picture]', file);
+    this.props.updateProfilePicture(this.props.currentUser, formData);
   };
 
   render () {
@@ -57,7 +65,7 @@ class Head extends React.Component {
                      id='upload_prof_pic' 
                      className='file_picker' 
                      accept='image/png, image/jpeg'
-                     onChange={() => this.handleUpload('profile')}
+                     onChange={(e) => this.handleProfileUpload(e)}
               />
             <div onClick={() => document.getElementById('upload_prof_pic').click()} 
                  className='hover_profile_pic'><div className='update_pro'>Update Profile Picture</div></div>

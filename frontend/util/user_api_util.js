@@ -14,3 +14,13 @@ export const updateCoverPhoto = (id, formData) => {
     processData: false
   });
 }
+
+export const updateProfilePicture = (id, formData) => {
+  return $.ajax({
+    url: `/api/users/${id}`,
+    method: 'PATCH',
+    data: formData,
+    contentType: false,
+    processData: false
+  });
+}
