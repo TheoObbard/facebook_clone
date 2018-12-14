@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Head from './head';
-import { fetchUser } from '../../actions/profile_actions';
+import { fetchUser, updateCoverPhoto } from '../../actions/profile_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const defaultUser = {};
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchUser: (id) => dispatch(fetchUser(id))
+    fetchUser: (id) => dispatch(fetchUser(id)), 
+    updateCoverPhoto: (id, formData) => dispatch(updateCoverPhoto(id, formData))
   }
 }
 

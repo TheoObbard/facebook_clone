@@ -4,3 +4,13 @@ export const fetchUser = (id) => {
     url: `/api/users/${id}`
   })
 };
+
+export const updateCoverPhoto = (id, formData) => {
+  return $.ajax({
+    url: `/api/users/${id}`, 
+    method: 'PATCH', 
+    data: formData, 
+    contentType: false, 
+    processData: false
+  });
+}

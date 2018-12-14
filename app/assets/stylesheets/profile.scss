@@ -1,6 +1,5 @@
 .page {
   width: 90%;
-  // margin: 0px 127.5px 0px 127.5px;
   margin-left: 10%;
 }
 
@@ -11,14 +10,28 @@
   top: 40px;
   left: 140px;
   z-index: 3;
+  cursor: pointer;
 }
 
 .cover_photo {
-  // background-image: image-url('temp_cover.jpg');
   background-repeat: no-repeat;
   background-color: gray;
   width: 851px;
   height: 315px;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  border-left: 1px solid rgba(0, 0, 0, .3);
+  border-right: 1px solid rgba(0, 0, 0, .3);
+}
+
+.cover_photo_pers {
+  background-repeat: no-repeat;
+  background-color: gray;
+  position: absolute;
+  width: 851px;
+  overflow: hidden;
+  height: 315px;
+  // height: auto;
+  object-fit: cover;
   border-bottom: 1px solid rgba(0, 0, 0, .3);
   border-left: 1px solid rgba(0, 0, 0, .3);
   border-right: 1px solid rgba(0, 0, 0, .3);
@@ -31,6 +44,7 @@
   top: 5px;
   left: 5px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .profile_pic {
@@ -292,4 +306,10 @@
   height: 19px;
   width: 19px;
   padding-left: 3px;
+}
+
+.file_picker {
+  visibility: hidden;
+  width: 1px; 
+  height: 1px;
 }

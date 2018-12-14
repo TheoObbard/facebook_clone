@@ -5,6 +5,7 @@ import NotFound from '../404';
 class Head extends React.Component {
   constructor(props) {
     super(props)
+    this.handleCoverUpload = this.handleCoverUpload.bind(this);
   }
 
   componentDidMount () {
@@ -17,6 +18,16 @@ class Head extends React.Component {
     }
   };
 
+  handleCoverUpload(e) {
+    console.log('gets here')
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0]
+    reader.readAsDataURL(file)
+    const formData = new FormData();
+    formData.append('user[cover_photo]', file);
+    this.props.updateCoverPhoto(this.props.currentUser, formData);
+  };
+
   render () {
     if (this.props.user === undefined) {
       return null;
@@ -26,12 +37,30 @@ class Head extends React.Component {
     if (this.props.user.id === this.props.currentUser) {
       cover_prof = (
         <div className='cover_photo'>
-          <img src={this.props.user.coverPhotoUrl}/>
-          <div className='cover_photo_hover'><div className='update_cov'>Update Cover Photo</div></div>
+          <img className='cover_photo_pers' 
+               src={this.props.user.coverPhotoUrl}
+          />
+          <input type='file'
+                 id='upload_cover_photo'
+                 className='file_picker'
+                 accept='image/png, image/jpeg'
+                 onChange={(e) => this.handleCoverUpload(e)}
+          />
+          <div onClick={() => document.getElementById('upload_cover_photo').click()} 
+               className='cover_photo_hover'>
+            <div className='update_cov'>Update Cover Photo</div>
+          </div>
           <h1 className='current_user_name'>{this.props.user.name}</h1>
           <div className='current_user_profile_pic_border'>
               <img src={this.props.user.profilePicUrl} className='profile_pic' />
-              <div className='hover_profile_pic'><div className='update_pro'>Update Profile Picture</div></div>
+              <input type='file'
+                     id='upload_prof_pic' 
+                     className='file_picker' 
+                     accept='image/png, image/jpeg'
+                     onChange={() => this.handleUpload('profile')}
+              />
+            <div onClick={() => document.getElementById('upload_prof_pic').click()} 
+                 className='hover_profile_pic'><div className='update_pro'>Update Profile Picture</div></div>
           </div>
         </div>
     )} else {

@@ -7,6 +7,12 @@ export const fetchUser = (id) => dispatch => {
   )
 };
 
+export const updateCoverPhoto = (id, formData) => dispatch => {
+  return UserApiUtil.updateCoverPhoto(id, formData).then(
+    (user) => dispatch(recieveUser(user))
+  )
+};
+
 export const recieveUser = (user) => {
   return {
     type: RECIEVE_USER, 
