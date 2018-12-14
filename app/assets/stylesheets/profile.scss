@@ -14,8 +14,9 @@
 }
 
 .cover_photo {
-  background-image: image-url('temp_cover.jpg');
+  // background-image: image-url('temp_cover.jpg');
   background-repeat: no-repeat;
+  background-color: gray;
   width: 851px;
   height: 315px;
   border-bottom: 1px solid rgba(0, 0, 0, .3);
@@ -55,8 +56,21 @@
   display: none;
 }
 
+.current_user_update_cov {
+  margin-top: 50px;
+  position: absolute;
+  font-size: 12px;
+  color: #BEC0BC;
+  border: 1px solid #BEC0BC;
+  border-radius: 2px;
+  margin-left: 40px;
+  padding: 10px;
+  display: none;
+}
+ 
+
 .cover_photo_hover:hover .update_cov {
-  display: block;
+  display: inline-block;
   z-index: 3;
   background-color: rgba(0,0,0,0.7); 
 }
@@ -79,27 +93,22 @@
   display: block;
 }
 
-// .profile_pic:hover .update_profile_pic {
-//   background-color: rgba(0, 0, 0, .5);
-//   display: block;
-//   height: 168px;
-//   width: 168px;
-//   position: relative;
-//   top: 5px;
-//   left: 5px;
-//   border-radius: 50%;
-//   z-index: 1;
-// }
-
-.profile_pic_border {
+.profile_pic_border, .current_user_profile_pic_border {
   background-color: white;
   height: 178px;
   width: 178px;
   position: relative;
-  top: 70px;
   left: 18px;
   border-radius: 50%;
   border: 1px solid #D9D9D9;
+}
+
+.profile_pic_border {
+  top: 70px;
+}
+
+.current_user_profile_pic_border {
+  top: 52px;
 }
 
 .user_name {
@@ -108,6 +117,15 @@
   text-shadow: 0px 0px 3px black;
   left: 220px;
   top: 225px;
+  font-weight: normal;
+}
+
+.current_user_name {
+  position: relative;
+  color: white;
+  text-shadow: 0px 0px 3px black;
+  left: 220px;
+  top: 209px;
   font-weight: normal;
 }
 

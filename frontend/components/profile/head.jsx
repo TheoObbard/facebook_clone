@@ -21,20 +21,17 @@ class Head extends React.Component {
     if (this.props.user === undefined) {
       return null;
     }
-
     let cover_prof;
 
     if (this.props.user.id === this.props.currentUser) {
       cover_prof = (
         <div className='cover_photo'>
+          <img src={this.props.user.coverPhotoUrl}/>
           <div className='cover_photo_hover'><div className='update_cov'>Update Cover Photo</div></div>
-          <h1 className='user_name'>{this.props.user.name}</h1>
-          <div className='profile_pic_border'>
-            <div>
-              <img src={this.props.user.photoUrl} className='profile_pic' />
+          <h1 className='current_user_name'>{this.props.user.name}</h1>
+          <div className='current_user_profile_pic_border'>
+              <img src={this.props.user.profilePicUrl} className='profile_pic' />
               <div className='hover_profile_pic'><div className='update_pro'>Update Profile Picture</div></div>
-            </div>
-            
           </div>
         </div>
     )} else {
@@ -43,7 +40,7 @@ class Head extends React.Component {
           <h1 className='user_name'>{this.props.user.name}</h1>
           <div className='profile_pic_border'>
             <div>
-              <img src={this.props.user.photoUrl} className='profile_pic'></img>
+              <img src={this.props.user.profilePicUrl} className='profile_pic'></img>
             </div>
           </div>
         </div>

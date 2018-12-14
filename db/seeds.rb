@@ -8,4 +8,24 @@
 
 User.destroy_all
 
-User.create(email: 'jim@dundermifflin.com', name: 'Jim Halpert', password: 'password', birthday: Date.new(2018, 12, 02), gender: 'Male', job: 'paper sales', relationship_stat: 'it\'s complicated', location: 'Scranton PA')
+User.create(
+  email: 'jim@dundermifflin.com', 
+  name: 'Jim Halpert', 
+  password: 'password', 
+  birthday: Date.new(2018, 12, 02), 
+  gender: 'Male', 
+  job: 'paper sales', 
+  relationship_stat: 'it\'s complicated', 
+  location: 'Scranton, PA', 
+)
+
+User.create(
+  email: 'pam@dundermifflin.com', 
+  name: 'Pam Beasley', 
+  password: 'password', 
+  birthday: Date.new(2018, 12, 02), 
+  gender: 'Female', 
+  job: 'receptionist', 
+  relationship_stat: 'it\'s complicated', 
+  location: 'Scranton, PA', 
+)
