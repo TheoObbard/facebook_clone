@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import NavBar from './nav_bar';
 import { logout } from '../../actions/session_actions';
-import { getFriendRequests } from '../../actions/friend_actions';
+import { getFriendRequests, removeReq, addFriend } from '../../actions/friend_actions';
 import { fetchUser } from '../../actions/profile_actions';
 
 const mapStateToProps = state => {
@@ -17,7 +17,9 @@ const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout()), 
     getFriendRequests: (id) => dispatch(getFriendRequests(id)), 
-    fetchUser: (id) => dispatch(fetchUser(id))
+    fetchUser: (id) => dispatch(fetchUser(id)), 
+    removeReq: (request) => dispatch(removeReq(request)), 
+    addFriend: (friendship) => dispatch(addFriend(friendship))
   }
 };
 

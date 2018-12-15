@@ -5,6 +5,11 @@ class Info extends React.Component {
     super(props)
   }
 
+  displayFriends () {
+    // calls fetch friends 
+    // loops over 9 of them and returns their pic/name
+  }
+
   render() {
     if (this.props.user.id === undefined) {
       return (<h1></h1>)
@@ -79,6 +84,7 @@ class Info extends React.Component {
           <div className='title'>
             <div className='friends_icon'></div>
             <h3>Friends</h3>
+            {this.displayFriends}
           </div>
         </div>
 

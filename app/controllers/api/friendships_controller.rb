@@ -20,7 +20,7 @@ class Api::FriendshipsController < ApplicationController
   private 
 
   def friend_params 
-    params.require(:friendships).permit(:user_one_id, :user_two_id)
+    params.require(:friendship).permit(:user_one_id, :user_two_id)
   end 
 
 end 

@@ -4,7 +4,7 @@ export const RECEIVE_FRIENDS = 'RECEIVE_FRIENDS';
 
 export const addReq = (request) => dispatch => {
   return FriendApiUtil.createReq(request).then(
-    (friendRequests) => dispatch(recieveRequests(friendRequests))
+    (friendRequests) => dispatch(receiveRequests(friendRequests))
   )
 };
 
@@ -12,15 +12,21 @@ export const getFriendRequests = (id) => dispatch => {
   return FriendApiUtil.getSpecificRequests(id).then(
     (friendRequests) => 
       { return new Promise((resolve, reject) => {
-        dispatch(recieveRequests(friendRequests));
+        dispatch(receiveRequests(friendRequests));
         resolve();
       })
     }
   )
 };
 
+export const fetchFriends = (id) => dispatch => {
+  return FriendApiUtil.fetchFriends(request).then(
+    (friends) => dispatch(receiveFriends(friends))
+  )
+};
+
 export const removeReq = (request) => dispatch => {
-  return FriendApiUtil.deleteReq(request).then(
+  return FriendApiUtil.deleteReq(request.id).then(
     (friendRequests) => dispatch(receiveRequests(friendRequests))
   )
 };
@@ -31,7 +37,7 @@ export const addFriend = (friend) => dispatch => {
   )
 };
 
-export const recieveRequests = (payload) => {
+export const receiveRequests = (payload) => {
   return {
     type: RECEIVE_FRIEND_REQUESTS,
     payload
