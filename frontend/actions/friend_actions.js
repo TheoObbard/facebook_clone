@@ -2,7 +2,7 @@ import * as FriendApiUtil from '../util/friends_api_util';
 export const RECEIVE_FRIEND_REQUESTS = 'RECEIVE_FRIEND_REQUESTS';
 export const RECEIVE_FRIENDS = 'RECEIVE_FRIENDS';
 
-export const recieveReq = (request) => dispatch => {
+export const addReq = (request) => dispatch => {
   return FriendApiUtil.createReq(request).then(
     (friendRequests) => dispatch(recieveRequests(friendRequests))
   )

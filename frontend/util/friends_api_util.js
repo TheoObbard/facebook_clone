@@ -1,8 +1,8 @@
-export const createReq = (request) => {
+export const createReq = (friend_request) => {
   return $.ajax({
     method: 'POST', 
     url: '/api/friend_requests', 
-    data: { request }
+    data: { friend_request }
   })
 };
 

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Head from './head';
 import { fetchUser, updateCoverPhoto, updateProfilePicture } from '../../actions/profile_actions';
+import { addReq } from '../../actions/friend_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,7 +15,8 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchUser: (id) => dispatch(fetchUser(id)), 
     updateCoverPhoto: (id, formData) => dispatch(updateCoverPhoto(id, formData)), 
-    updateProfilePicture: (id, formData) => dispatch(updateProfilePicture(id, formData))
+    updateProfilePicture: (id, formData) => dispatch(updateProfilePicture(id, formData)), 
+    addReq: (friendship) => dispatch(addReq(friendship))
   }
 }
 

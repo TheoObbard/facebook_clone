@@ -41,6 +41,13 @@ class Head extends React.Component {
       return null;
     }
     let cover_prof;
+    const future_friend = () => {
+      return (
+        <button onClick={() => this.props.addReq({requester_id: this.props.currentUser, requestee_id: this.props.user.id})}>
+          Add Friend
+        </button>
+      )
+    }
 
     if (this.props.user.id === this.props.currentUser) {
       cover_prof = (
@@ -78,6 +85,7 @@ class Head extends React.Component {
     )} else {
       cover_prof = (
         <div className='cover_photo'>
+          {future_friend()}
           <h1 className='user_name'>{this.props.user.name}</h1>
           <div className='profile_pic_border'>
             <div>
