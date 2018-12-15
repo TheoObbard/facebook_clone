@@ -10,8 +10,6 @@ class Api::SessionsController < ApplicationController
     end 
   end 
 
-  # 'api/users/show'
-
   def destroy 
     @user = current_user 
     if @user 

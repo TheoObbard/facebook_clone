@@ -7,32 +7,38 @@ class Info extends React.Component {
 
   verifyProfilePic (userId) {    
     if (this.props.users[userId].profilePicUrl !== undefined) {
-      return (<img src={this.props.users[userId].profilePicUrl} alt="friend_image" />)
+      return (<img className='friend_pic' src={this.props.users[userId].profilePicUrl} alt="friend_image" />)
     }
   };
 
   displayFriends () {
+    const friends = [];
+    let count = 0;
     for (let key in this.props.friendships) {
+      count += 1;
+      if (count === 9) {
+        break;
+      }
       let correct_user_id;
       if (this.props.friendships[key].user_one_id !== this.props.user.id) {
         correct_user_id = this.props.friendships[key].user_one_id
       } else (
         correct_user_id = this.props.friendships[key].user_two_id
       )
-
       if (this.props.users[correct_user_id]) {
-        return (
-          <li>
+        friends.push(
+          <li className='friend_window'>
             {this.verifyProfilePic(correct_user_id)}
             {this.props.users[correct_user_id].name}
           </li>
         )
       }
     }
+    return friends.map((friend) => (friend));
   };
 
   componentDidMount () {
-    this.props.fetchFriends(this.props.currentUserId).then(
+    this.props.fetchFriends(this.props.user.id).then(
       () => {
         for (let key in this.props.friendships) {
           let correct_user_id;
