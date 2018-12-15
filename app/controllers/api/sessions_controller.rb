@@ -4,11 +4,13 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if @user
       login(@user)
-      render 'api/users/show'
+      render json: @user.id
     else  
       render json: ["The email or phone number you've entered doesn't match any account."], status: 422
     end 
   end 
+
+  # 'api/users/show'
 
   def destroy 
     @user = current_user 
