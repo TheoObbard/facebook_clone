@@ -5,7 +5,7 @@ const friendRequestsReducer = (oldState = {}, action) => {
   var newState;
   switch (action.type) {
     case RECEIVE_FRIEND_REQUESTS:
-      newState = Object.assign({}, oldState, action.payload.friendRequests);
+      newState = Object.assign({}, action.payload.friendRequests);
       return newState;
     default:
       return oldState;

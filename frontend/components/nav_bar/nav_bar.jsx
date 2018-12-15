@@ -54,7 +54,9 @@ class NavBar extends React.Component {
                 <button onClick={() => this.props.addFriend({
                   user_one_id: this.props.currentUser.id,
                   user_two_id: this.props.friendRequests[key].requester_id
-                })}>
+                }).then(
+                  () => this.props.getFriendRequests(this.props.currentUser.id)
+                )}>
                   accept
               </button>
                 <button onClick={() => this.props.removeReq(this.props.friendRequests[key])}>

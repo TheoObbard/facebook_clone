@@ -38,7 +38,12 @@ export const removeReq = (request) => dispatch => {
 
 export const addFriend = (friend) => dispatch => {
   return FriendApiUtil.createFriend(friend).then(
-    (friends) => dispatch(receiveFriends(friends))
+    (friends) => 
+      { return new Promise((resolve, reject) => {
+        dispatch(receiveFriends(friends));
+        resolve();
+      })
+    }
   )
 };
 
