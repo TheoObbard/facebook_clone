@@ -189,11 +189,10 @@
   color: white;
   font-family: "Lucida Grande", sans-serif;
   font-weight: 200;
-  width: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 50%;
+  margin-left: 45%;
   padding-left: 10px;
 }
 
@@ -218,3 +217,85 @@
   padding-right: 10px;
   text-align: right;
 }
+
+// ===================== 
+
+.friend_dropdown {
+  float: right;
+  margin-right: 10px;
+}
+
+.friend_logo {
+  color: #1B2A45;
+}
+
+.friend_dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; 
+  margin-bottom: 0px; 
+  height: 43px;
+}
+
+.friend_dropdown {
+  position: relative;
+}
+
+.friend_text {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+}
+
+.friend_button_container {
+  padding-top: 10px;
+}
+
+.friend_button_container:hover {
+  height: 22px;
+  padding-top: 10px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.friend_button_container:hover .friend_text {
+  color: black;
+}
+
+.dropdown-content button {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+}
+
+.friend_dropdown_content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  z-index: 1;
+  left: -120px;
+  height: 100px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.friend_dropdown_content button:hover {
+  background-color: #FFFFFF;
+  border: 2px solid #B2B2B2;
+}
+
+.friend_dropdown:hover .friend_dropdown_content {
+  display: block;
+}
+

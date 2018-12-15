@@ -20,3 +20,10 @@ export const createFriend = (friend) => {
     data: { friend }
   })
 };
+
+export const getSpecificRequests = (id) => {
+  return $.ajax({
+    method: 'GET', 
+    url: `/api/users/${id}/friend_requests`
+  })
+};

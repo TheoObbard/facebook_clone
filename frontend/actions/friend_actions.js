@@ -8,6 +8,17 @@ export const addReq = (request) => dispatch => {
   )
 };
 
+export const getFriendRequests = (id) => dispatch => {
+  return FriendApiUtil.getSpecificRequests(id).then(
+    (friendRequests) => 
+      { return new Promise((resolve, reject) => {
+        dispatch(recieveRequests(friendRequests));
+        resolve();
+      })
+    }
+  )
+};
+
 export const removeReq = (request) => dispatch => {
   return FriendApiUtil.deleteReq(request).then(
     (friendRequests) => dispatch(receiveRequests(friendRequests))

@@ -7,6 +7,78 @@ class NavBar extends React.Component {
     super(props)
   }
 
+  componentDidUpdate (prevProps) {
+    // if (prevProps.friendRequests !== this.props.friendRequests) {
+    //   console.log(this.props.friendRequests);
+    //   for (var key in this.props.friendRequests) {
+    //     console.log('getting here');
+    //     if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
+    //       this.fetchUser(friendReq.id)
+    //     }
+    //   }
+    // }
+  };
+
+  componentDidMount () {
+    this.props.getFriendRequests(this.props.currentUser.id).then(
+      () => {
+        console.log(this.props.friendRequests);
+        for (var key in this.props.friendRequests) {
+          console.log(key);
+          
+          if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
+            this.props.fetchUser(this.props.friendRequests[key].requester_id)
+          }
+        }
+      }
+    )
+  }
+
+  logout_button () {
+    return (
+      <div className='dropdown'>
+        <button className='dropbtn'>
+          <div className='triangle'></div>
+        </button>
+        <div className='dropdown_content'>
+          <div className='logout_button_container'>
+            <Link
+              className='logout_text'
+              to='/'
+              onClick={this.props.logout}
+            >Log Out
+            </Link>
+          </div>
+        </div>
+      </div>
+    )
+  };
+
+  getPendingRequests() {
+    if (this.props.friendRequests !== undefined) {
+      for (var key in this.props.friendRequests) {
+        if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
+          return <li>{this.props.users[this.props.friendRequests[key].requester_id].name}</li>
+        }
+      }
+    }
+  };
+
+  pending_friends_button() {
+    return (
+      <div className='friend_dropdown'>
+        <button className='dropbtn'>
+          <i className="fas fa-user-friends friend_logo"></i>
+        </button>
+        <div className='friend_dropdown_content'>
+          <div className='friend_button_container'>
+            <div className='friend_text'>{this.getPendingRequests()}</div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   render() {    
     const nav = (this.props.currentUser === undefined) ? (
       <div className='loggedout_menubar_container'>
@@ -29,21 +101,8 @@ class NavBar extends React.Component {
           >{this.props.currentUser.name}
           </Link>
         </div>
-        <div className='dropdown'>
-          <button className='dropbtn'>
-            <div className='triangle'></div>
-          </button>
-          <div className='dropdown_content'>
-            <div className='logout_button_container'>
-              <Link
-                className='logout_text'
-                to='/'
-                onClick={this.props.logout}
-              >Log Out
-            </Link>
-            </div>
-          </div>
-        </div>
+        {this.pending_friends_button()}
+        {this.logout_button()}
       </div>
     )
 

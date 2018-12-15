@@ -17,6 +17,11 @@ class Api::FriendRequestsController < ApplicationController
     render "api/users/show"
   end 
 
+  def index
+    @user = User.find(params[:user_id])
+    render "api/users/show"
+  end 
+
   private 
 
   def request_params 

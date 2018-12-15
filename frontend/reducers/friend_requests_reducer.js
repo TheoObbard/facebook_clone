@@ -1,8 +1,6 @@
 import { RECEIVE_FRIEND_REQUESTS } from '../actions/friend_actions';
 
-const friendRequestsReducer = (oldState = {}, action) => {
-  console.log(action.payload);
-  
+const friendRequestsReducer = (oldState = {}, action) => {  
   Object.freeze(oldState);
   var newState;
   switch (action.type) {

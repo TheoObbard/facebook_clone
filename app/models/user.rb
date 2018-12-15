@@ -27,11 +27,11 @@ class User < ApplicationRecord
   has_one_attached :cover_photo
 
   has_many :sent_friend_requests, 
-    foreign_key: :requestee_id, 
+    foreign_key: :requester_id, 
     class_name: :FriendRequest
 
   has_many :received_friend_requests, 
-    foreign_key: :requester_id, 
+    foreign_key: :requestee_id, 
     class_name: :FriendRequest
 
   has_many :friends, 
