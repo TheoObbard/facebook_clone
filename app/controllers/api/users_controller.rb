@@ -25,7 +25,7 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       render "api/users/show"
-    else  
+    else
       render json: ['Invalid upload type'], status: 420
     end 
   end 

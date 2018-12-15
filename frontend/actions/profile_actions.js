@@ -19,9 +19,9 @@ export const updateProfilePicture = (id, formData) => dispatch => {
   )
 };
 
-export const recieveUser = (user) => {
+export const recieveUser = (payload) => {
   return {
     type: RECIEVE_USER, 
-    user
+    payload
   }
 };
