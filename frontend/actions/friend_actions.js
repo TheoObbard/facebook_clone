@@ -20,8 +20,13 @@ export const getFriendRequests = (id) => dispatch => {
 };
 
 export const fetchFriends = (id) => dispatch => {
-  return FriendApiUtil.fetchFriends(request).then(
-    (friends) => dispatch(receiveFriends(friends))
+  return FriendApiUtil.fetchFriends(id).then(
+    (friends) => 
+      { return new Promise((resolve, reject) => {
+        dispatch(receiveFriends(friends));
+        resolve();
+      })
+    }
   )
 };
 

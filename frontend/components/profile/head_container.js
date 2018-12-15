@@ -5,9 +5,12 @@ import { addReq, fetchFriends } from '../../actions/friend_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    user: state.entities.users[ownProps.match.params.userId], 
+    user: state.entities.users[ownProps.match.params.userId],
+    users: state.entities.users, 
     userId: ownProps.match.params.userId,
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    friendships: state.entities.friendships, 
+    friendRequests: state.entities.friendRequests
   }
 };
 

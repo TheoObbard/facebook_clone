@@ -5,10 +5,47 @@ class Info extends React.Component {
     super(props)
   }
 
+  verifyProfilePic (userId) {    
+    if (this.props.users[userId].profilePicUrl !== undefined) {
+      return (<img src={this.props.users[userId].profilePicUrl} alt="friend_image" />)
+    }
+  };
+
   displayFriends () {
-    // calls fetch friends 
-    // loops over 9 of them and returns their pic/name
-  }
+    for (let key in this.props.friendships) {
+      let correct_user_id;
+      if (this.props.friendships[key].user_one_id !== this.props.user.id) {
+        correct_user_id = this.props.friendships[key].user_one_id
+      } else (
+        correct_user_id = this.props.friendships[key].user_two_id
+      )
+
+      if (this.props.users[correct_user_id]) {
+        return (
+          <li>
+            {this.verifyProfilePic(correct_user_id)}
+            {this.props.users[correct_user_id].name}
+          </li>
+        )
+      }
+    }
+  };
+
+  componentDidMount () {
+    this.props.fetchFriends(this.props.currentUserId).then(
+      () => {
+        for (let key in this.props.friendships) {
+          let correct_user_id;
+          if (this.props.friendships[key].user_one_id !== this.props.user.id) {
+            correct_user_id = this.props.friendships[key].user_one_id
+          } else (
+            correct_user_id = this.props.friendships[key].user_two_id
+          )
+          this.props.fetchUser(correct_user_id)
+        }
+      }
+    )
+  };
 
   render() {
     if (this.props.user.id === undefined) {
@@ -84,7 +121,7 @@ class Info extends React.Component {
           <div className='title'>
             <div className='friends_icon'></div>
             <h3>Friends</h3>
-            {this.displayFriends}
+            {this.displayFriends()}
           </div>
         </div>
 

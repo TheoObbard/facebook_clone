@@ -7,31 +7,18 @@ class NavBar extends React.Component {
     super(props)
   }
 
-  componentDidUpdate (prevProps) {
-    // if (prevProps.friendRequests !== this.props.friendRequests) {
-    //   console.log(this.props.friendRequests);
-    //   for (var key in this.props.friendRequests) {
-    //     console.log('getting here');
-    //     if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
-    //       this.fetchUser(friendReq.id)
-    //     }
-    //   }
-    // }
-  };
-
   componentDidMount () {
-    this.props.getFriendRequests(this.props.currentUser.id).then(
-      () => {
-        console.log(this.props.friendRequests);
-        for (var key in this.props.friendRequests) {
-          console.log(key);
-          
-          if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
-            this.props.fetchUser(this.props.friendRequests[key].requester_id)
+    if (this.props.currentUser) {
+      this.props.getFriendRequests(this.props.currentUser.id).then(
+        () => {
+          for (var key in this.props.friendRequests) {
+            if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
+              this.props.fetchUser(this.props.friendRequests[key].requester_id)
+            }
           }
         }
-      }
-    )
+      )
+    }
   }
 
   logout_button () {
@@ -58,22 +45,24 @@ class NavBar extends React.Component {
     if (this.props.friendRequests !== undefined) {
       for (var key in this.props.friendRequests) {
         if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
-          return (
-            <li>
-              <Link to={`/users/${this.props.friendRequests[key].requestee_id}`}>
-                {this.props.users[this.props.friendRequests[key].requestee_id].name}
-              </Link>
-              <button onClick={() => this.props.addFriend({
-                user_one_id: this.props.currentUser.id, 
-                user_two_id: this.props.friendRequests[key].requester_id
-              })}>
-                accept
+          if (this.props.users[this.props.friendRequests[key].requester_id]) {
+            return (
+              <li>
+                <Link to={`/users/${this.props.friendRequests[key].requester_id}`}>
+                  {this.props.users[this.props.friendRequests[key].requester_id].name}
+                </Link>
+                <button onClick={() => this.props.addFriend({
+                  user_one_id: this.props.currentUser.id,
+                  user_two_id: this.props.friendRequests[key].requester_id
+                })}>
+                  accept
               </button>
-              <button onClick={() => this.props.removeReq(this.props.friendRequests[key])}>
-                delete
+                <button onClick={() => this.props.removeReq(this.props.friendRequests[key])}>
+                  delete
               </button>
-            </li>
-          )
+              </li>
+            )
+          }
         }
       }
     }

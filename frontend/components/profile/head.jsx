@@ -18,6 +18,22 @@ class Head extends React.Component {
     }
   };
 
+  displayFriendRequestButton () {
+    // map over friend requests and return a button that says pending
+
+    // map over friends and return nothing 
+
+    //otherwise, return a button that adds friend
+
+    // if (this.props.friendRequests[this.props.user.id]) {
+    //   return
+    // } else if (this.props.friendRequests[this.props.user.id]) {
+
+    // } else {
+    //   return future_friend()
+    // }
+  }
+
   handleCoverUpload(e) {
     const reader = new FileReader();
     const file = e.currentTarget.files[0]
@@ -85,6 +101,7 @@ class Head extends React.Component {
     )} else {
       cover_prof = (
         <div className='cover_photo'>
+          {/* PUT IT HERE  */}
           {future_friend()}
           <h1 className='user_name'>{this.props.user.name}</h1>
           <div className='profile_pic_border'>
@@ -109,7 +126,13 @@ class Head extends React.Component {
           <li className='profile_nav_button'>Photos</li>
         </ul>
 
-        <Info user={this.props.user} />
+        <Info user={this.props.user} 
+              fetchFriends={this.props.fetchFriends}
+              currentUserId={this.props.currentUser}
+              friendships={this.props.friendships}
+              users={this.props.users}
+              fetchUser={this.props.fetchUser}
+        />
       </div>
     )
   };

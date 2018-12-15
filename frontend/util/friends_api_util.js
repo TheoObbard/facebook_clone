@@ -30,6 +30,7 @@ export const getSpecificRequests = (id) => {
 
 export const fetchFriends = (id) => {
   return $.ajax({
-    
+    method: 'GET',
+    url: `/api/users/${id}/friendships`
   })
 };

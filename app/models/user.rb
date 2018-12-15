@@ -34,11 +34,11 @@ class User < ApplicationRecord
     foreign_key: :requestee_id, 
     class_name: :FriendRequest
 
-  has_many :friends, 
+  has_many :one_friends, 
     foreign_key: :user_one_id, 
     class_name: :Friendship
 
-  has_many :friends,  #I am very confident this is wrong
+  has_many :two_friends,  
     foreign_key: :user_two_id, 
     class_name: :Friendship
 
