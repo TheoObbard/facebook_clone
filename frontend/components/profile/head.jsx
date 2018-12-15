@@ -20,18 +20,23 @@ class Head extends React.Component {
 
   displayFriendRequestButton () {
     // map over friend requests and return a button that says pending
+    for (let key in this.props.friendRequests) {
+      if (this.props.friendRequests[key].requestee_id === this.props.user.id) {
+        return (<button>Friend Request Sent</button>)
+      }
+    }
 
-    // map over friends and return nothing 
+    for (let key in this.props.friendships) {
+      if (this.props.friendships[key].user_one_id === this.props.user.id || this.props.friendships[key].user_two_id === this.props.user.id) {
+        return (<button>Friends</button>)
+      }
+    }
 
-    //otherwise, return a button that adds friend
-
-    // if (this.props.friendRequests[this.props.user.id]) {
-    //   return
-    // } else if (this.props.friendRequests[this.props.user.id]) {
-
-    // } else {
-    //   return future_friend()
-    // }
+    return (
+      <button onClick={() => this.props.addReq({ requester_id: this.props.currentUser, requestee_id: this.props.user.id })}>
+        Add Friend
+      </button>
+    )
   }
 
   handleCoverUpload(e) {
@@ -57,13 +62,13 @@ class Head extends React.Component {
       return null;
     }
     let cover_prof;
-    const future_friend = () => {
-      return (
-        <button onClick={() => this.props.addReq({requester_id: this.props.currentUser, requestee_id: this.props.user.id})}>
-          Add Friend
-        </button>
-      )
-    }
+    // const future_friend = () => {
+    //   return (
+    //     <button onClick={() => this.props.addReq({requester_id: this.props.currentUser, requestee_id: this.props.user.id})}>
+    //       Add Friend
+    //     </button>
+    //   )
+    // }
 
     if (this.props.user.id === this.props.currentUser) {
       cover_prof = (
@@ -101,8 +106,8 @@ class Head extends React.Component {
     )} else {
       cover_prof = (
         <div className='cover_photo'>
-          {/* PUT IT HERE  */}
-          {future_friend()}
+          {this.displayFriendRequestButton()}
+          {/* {future_friend()} */}
           <h1 className='user_name'>{this.props.user.name}</h1>
           <div className='profile_pic_border'>
             <div>
