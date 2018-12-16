@@ -20,13 +20,13 @@ class Head extends React.Component {
 
   displayFriendRequestButton () {
     for (let key in this.props.friendRequests) {
-      if (this.props.friendRequests[key].requestee_id === this.props.user.id) {
+      if (this.props.friendRequests[key].requestee_id === this.props.user.id && this.props.friendRequests[key].requester_id === this.props.currentUser) {
         return (<button>Friend Request Sent</button>)
       }
     }
 
     for (let key in this.props.friendships) {
-      if (this.props.friendships[key].user_one_id === this.props.user.id || this.props.friendships[key].user_two_id === this.props.user.id) {
+      if (this.props.friendships[key].user_one_id === this.props.currentUser || this.props.friendships[key].user_two_id === this.props.currentUser) {
         return (<button>Friends</button>)
       }
     }

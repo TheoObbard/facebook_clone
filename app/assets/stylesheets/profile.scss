@@ -176,7 +176,7 @@
   margin-top: 12px;
 }
 
-.intro, .photos, .friends, .answers, h3 {
+.intro, .photos, .answers, h3 {
   color: black;
   padding-top: 20px;
   padding-left: 20px;
@@ -188,7 +188,16 @@
   align-items: center;
 }
 
-.intro_icon, .photo_icon, .friends_icon, .answers_icon {
+.intro_icon, .photo_icon, .answers_icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  padding-right: 10px;
+}
+
+.friends_icon {
+  margin-left: 20px;
   background-size: contain;
   background-repeat: no-repeat;
   height: 30px;
@@ -311,15 +320,42 @@
   height: 1px;
 }
 
+.friends {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  padding-top: 20px;
+  width: 341px;
+}
+
 .friend_window {
-  width: 50px;
-  height: 50px;
+  width: 101px;
+  height: 101px;
+  list-style: none;
+  padding: 2px;
+  // position: absolute;
 }
 
 .friend_pic {
-  width: 50px;
-  height: 50px;
+  width: 101px;
+  height: 101px;
   background-size: contain;
   background-repeat: no-repeat;
   object-fit: cover;
+}
+
+.grid {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.friend_name {
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  text-shadow: #1D2128;
+  // bottom: 20px;
 }

@@ -29,7 +29,9 @@ class Info extends React.Component {
         friends.push(
           <li className='friend_window'>
             {this.verifyProfilePic(correct_user_id)}
-            {this.props.users[correct_user_id].name}
+            <p className='friend_name'>
+              {this.props.users[correct_user_id].name}
+            </p>
           </li>
         )
       }
@@ -127,8 +129,10 @@ class Info extends React.Component {
           <div className='title'>
             <div className='friends_icon'></div>
             <h3>Friends</h3>
-            {this.displayFriends()}
           </div>
+          <ul className='grid'>
+            {this.displayFriends()}
+          </ul>
         </div>
 
         <div className='answers'>
