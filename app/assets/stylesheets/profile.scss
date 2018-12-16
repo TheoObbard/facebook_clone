@@ -7,8 +7,8 @@
   width: 815px;
   height: 315px;
   position: absolute;
-  top: 40px;
-  left: 140px;
+  top: 0px;
+  left: 0px;
   z-index: 3;
   cursor: pointer;
 }
@@ -16,6 +16,7 @@
 .cover_photo {
   background-repeat: no-repeat;
   background-color: gray;
+  position: relative;
   width: 851px;
   height: 315px;
   border-bottom: 1px solid rgba(0, 0, 0, .3);
@@ -365,4 +366,20 @@
 
 .link {
   z-index: 100;
+}
+
+.main_friend_button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  height: 24px;
+  margin-right: 20px;
+  background-color: #F5F6F7;
+  border-color: #CCD0D5;
+  color: #4B4F56;
+  border-radius: 3px;
+  font-family: "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-weight: bold;
+  width: 109px;
 }

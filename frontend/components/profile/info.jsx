@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class Info extends React.Component {
   constructor(props) {
     super(props)
+    this.createFriendsArray = this.createFriendsArray.bind(this)
   }
 
   verifyProfilePic (userId) {    
@@ -11,6 +12,25 @@ class Info extends React.Component {
       return (<Link className='link' to={`/user/${userId}`}><img className='friend_pic' src={this.props.users[userId].profilePicUrl} alt="friend_image" /></Link>)
     }
   };
+
+  createFriendsArray (key) {
+    let correct_user_id;
+    if (this.props.friendships[key].user_one_id !== this.props.user.id) {
+      correct_user_id = this.props.friendships[key].user_one_id
+    } else (
+      correct_user_id = this.props.friendships[key].user_two_id
+    )
+    if (this.props.users[correct_user_id]) {
+      return (
+        <li className='friend_window'>
+          {this.verifyProfilePic(correct_user_id)}
+          <p className='friend_name'>
+            {this.props.users[correct_user_id].name}
+          </p>
+        </li>
+      )
+    }
+  }
 
   displayFriends () {
     const friends = [];
@@ -20,22 +40,7 @@ class Info extends React.Component {
       if (count === 9) {
         break;
       }
-      let correct_user_id;
-      if (this.props.friendships[key].user_one_id !== this.props.user.id) {
-        correct_user_id = this.props.friendships[key].user_one_id
-      } else (
-        correct_user_id = this.props.friendships[key].user_two_id
-      )
-      if (this.props.users[correct_user_id]) {
-        friends.push(
-          <li className='friend_window'>
-            {this.verifyProfilePic(correct_user_id)}
-            <p className='friend_name'>
-              {this.props.users[correct_user_id].name}
-            </p>
-          </li>
-        )
-      }
+      friends.push(this.createFriendsArray(key))
     }
     return friends.map((friend) => (friend));
   };
@@ -43,6 +48,7 @@ class Info extends React.Component {
   componentDidMount () {
     this.props.fetchFriends(this.props.user.id).then(
       () => {
+
         for (let key in this.props.friendships) {
           let correct_user_id;
           if (this.props.friendships[key].user_one_id !== this.props.user.id) {
@@ -54,6 +60,25 @@ class Info extends React.Component {
         }
       }
     )
+  }
+
+  componentDidUpdate (oldProps) {
+    if (this.props.params.userId !== oldProps.params.userId) {
+      this.props.fetchFriends(this.props.user.id).then(
+        () => {
+
+          for (let key in this.props.friendships) {
+            let correct_user_id;
+            if (this.props.friendships[key].user_one_id !== this.props.user.id) {
+              correct_user_id = this.props.friendships[key].user_one_id
+            } else (
+              correct_user_id = this.props.friendships[key].user_two_id
+            )
+            this.props.fetchUser(correct_user_id)
+          }
+        }
+      )
+    }
   };
 
   render() {
