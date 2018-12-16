@@ -333,7 +333,7 @@
   height: 101px;
   list-style: none;
   padding: 2px;
-  // position: absolute;
+  position: relative;
 }
 
 .friend_pic {
@@ -345,17 +345,24 @@
 }
 
 .grid {
-  padding-top: 10px;
+  width: 318px;
+  padding: 12px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .friend_name {
   position: absolute;
   color: white;
   font-size: 12px;
-  text-shadow: #1D2128;
+  text-shadow: 0px 0px 5px #1D2128;
+  bottom: 5px;
+  left: 5px;
+  z-index: 5;
   // bottom: 20px;
+}
+
+.link {
+  z-index: 100;
 }

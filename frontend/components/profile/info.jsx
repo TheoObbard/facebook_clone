@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Info extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class Info extends React.Component {
 
   verifyProfilePic (userId) {    
     if (this.props.users[userId].profilePicUrl !== undefined) {
-      return (<img className='friend_pic' src={this.props.users[userId].profilePicUrl} alt="friend_image" />)
+      return (<Link className='link' to={`/user/${userId}`}><img className='friend_pic' src={this.props.users[userId].profilePicUrl} alt="friend_image" /></Link>)
     }
   };
 

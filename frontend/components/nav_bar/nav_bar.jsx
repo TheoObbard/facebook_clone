@@ -47,21 +47,22 @@ class NavBar extends React.Component {
         if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
           if (this.props.users[this.props.friendRequests[key].requester_id]) {
             return (
-              <li>
-                <Link to={`/users/${this.props.friendRequests[key].requester_id}`}>
+              <li className='list_item_for_req'>
+                <img className='requester_img' src={this.props.users[this.props.friendRequests[key].requester_id].profilePicUrl} alt="requester_pic"/>
+                <Link className='friend_req_name' to={`/users/${this.props.friendRequests[key].requester_id}`}>
                   {this.props.users[this.props.friendRequests[key].requester_id].name}
                 </Link>
-                <button onClick={() => this.props.addFriend({
+                <button className='confirm' onClick={() => this.props.addFriend({
                   user_one_id: this.props.currentUser.id,
                   user_two_id: this.props.friendRequests[key].requester_id
                 }).then(
                   () => this.props.getFriendRequests(this.props.currentUser.id)
                 )}>
-                  accept
-              </button>
-                <button onClick={() => this.props.removeReq(this.props.friendRequests[key])}>
-                  delete
-              </button>
+                  Confirm
+                </button>
+                  <button className='delete_request' onClick={() => this.props.removeReq(this.props.friendRequests[key])}>
+                    Delete Request
+                </button>
               </li>
             )
           }
