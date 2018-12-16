@@ -8,7 +8,7 @@ const postReducer = (oldState = {}, action) => {
       newState = Object.assign({}, oldState, action.payload.posts);
       return newState;
     case RECEIVE_POSTS:
-      return payload.posts;
+      return action.payload.posts || {};
     default:
       return oldState;
   }

@@ -12,10 +12,12 @@ class PostForm extends React.Component {
   };
 
   // this keeps the post input from persisting if you switch users pages
-  componentDidUpdate() {
-    this.setState({
-      body: ''
-    })
+  componentDidUpdate(prevProps) {
+    if (prevProps.user.id != this.props.user.id) {
+      this.setState({
+        body: ''
+      })
+    }
   };
 
   handleType() {    

@@ -2,6 +2,7 @@ import React from 'react';
 import Info from './info';
 import NotFound from '../404';
 import PostForm from '../posts/post_form_container';
+import PostIndex from '../posts/post_index_container';
 
 class Head extends React.Component {
   constructor(props) {
@@ -171,7 +172,10 @@ class Head extends React.Component {
             params={this.props.params}
           />
 
-          {this.canPostLogic()}
+          <div>
+            {this.canPostLogic()}
+            <PostIndex user={this.props.user}/>
+          </div>
         </div>
       </div>
     )
