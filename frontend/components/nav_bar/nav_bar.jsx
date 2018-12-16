@@ -5,6 +5,7 @@ import Login from '../session/login_container';
 class NavBar extends React.Component {
   constructor(props) {
     super(props)
+    this.handleConfirm = this.handleConfirm.bind(this)
   }
 
   componentDidMount () {
@@ -41,23 +42,28 @@ class NavBar extends React.Component {
     )
   };
 
+  handleConfirm(id) {
+    this.props.addFriend({
+      user_one_id: this.props.currentUser.id,
+      user_two_id: id
+    }).then(
+      () => this.props.getFriendRequests(this.props.currentUser.id)
+    )
+  }
+
   getPendingRequests() {
+    const pending_requests = [];
     if (this.props.friendRequests !== undefined) {
       for (var key in this.props.friendRequests) {
         if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
           if (this.props.users[this.props.friendRequests[key].requester_id]) {
-            return (
+            pending_requests.push(
               <li className='list_item_for_req'>
                 <img className='requester_img' src={this.props.users[this.props.friendRequests[key].requester_id].profilePicUrl} alt="requester_pic"/>
-                <Link className='friend_req_name' to={`/users/${this.props.friendRequests[key].requester_id}`}>
+                <Link className='friend_req_name' to={`/user/${this.props.friendRequests[key].requester_id}`}>
                   {this.props.users[this.props.friendRequests[key].requester_id].name}
                 </Link>
-                <button className='confirm' onClick={() => this.props.addFriend({
-                  user_one_id: this.props.currentUser.id,
-                  user_two_id: this.props.friendRequests[key].requester_id
-                }).then(
-                  () => this.props.getFriendRequests(this.props.currentUser.id)
-                )}>
+                <button className='confirm' onClick={() => this.handleConfirm(this.props.users[this.props.friendRequests[key].requester_id].id)}>
                   Confirm
                 </button>
                   <button className='delete_request' onClick={() => this.props.removeReq(this.props.friendRequests[key])}>
@@ -69,6 +75,7 @@ class NavBar extends React.Component {
         }
       }
     }
+    return pending_requests.map(request => request)
   };
 
   pending_friends_button() {
@@ -79,6 +86,7 @@ class NavBar extends React.Component {
         </button>
         <div className='friend_dropdown_content'>
           <div className='friend_button_container'>
+            <p>Friend Requests</p>
             <div className='friend_text'>{this.getPendingRequests()}</div>
           </div>
         </div>

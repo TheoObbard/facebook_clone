@@ -246,7 +246,6 @@
 .friend_text {
   text-decoration: none;
   color: black;
-  margin-left: 20px;
 }
 
 .friend_button_container {
@@ -345,6 +344,11 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DDDFE2;
+  width: auto;
+  padding-left: 20px;
 }
 
 .requester_img {
@@ -353,5 +357,13 @@ a {
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 50%;
-  // object-fit: cover;
+}
+
+.friend_button_container p {
+  color: #333333;
+  font-weight: bold;
+  padding-left: 20px; 
+  margin-bottom: 10px; 
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DDDFE2;
 }
