@@ -130,7 +130,7 @@ class Info extends React.Component {
     }
 
     return (
-      <div>
+      <div className='main_info'>
         <div className='intro'>
           <div className='title'>
             <div className='intro_icon'></div>

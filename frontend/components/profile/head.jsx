@@ -1,6 +1,7 @@
 import React from 'react';
 import Info from './info';
 import NotFound from '../404';
+import PostForm from '../posts/post_form_container';
 
 class Head extends React.Component {
   constructor(props) {
@@ -73,6 +74,26 @@ class Head extends React.Component {
     }
   };
 
+  canPostLogic() {
+    if (this.props.user.id === this.props.currentUser) {
+      console.log('current user');
+      
+      return (
+        <PostForm user={this.props.user} />
+      )
+    }
+    
+    for (let key in this.props.friendships) {
+      if (this.props.currentUser === this.props.friendships[key].user_one_id || this.props.currentUser === this.props.friendships[key].user_two_id) {
+        console.log('friend of user');
+
+        return (
+          <PostForm user={this.props.user} />
+        )
+      }
+    }
+  };
+
   render () {
     if (this.props.user === undefined) {
       return null;
@@ -140,14 +161,18 @@ class Head extends React.Component {
           <li className='profile_nav_button'>Photos</li>
         </ul>
 
-        <Info user={this.props.user} 
-              fetchFriends={this.props.fetchFriends}
-              currentUserId={this.props.currentUser}
-              friendships={this.props.friendships}
-              users={this.props.users}
-              fetchUser={this.props.fetchUser}
-              params={this.props.params}
-        />
+        <div className='main_lower_content'>
+          <Info user={this.props.user}
+            fetchFriends={this.props.fetchFriends}
+            currentUserId={this.props.currentUser}
+            friendships={this.props.friendships}
+            users={this.props.users}
+            fetchUser={this.props.fetchUser}
+            params={this.props.params}
+          />
+
+          {this.canPostLogic()}
+        </div>
       </div>
     )
   };
