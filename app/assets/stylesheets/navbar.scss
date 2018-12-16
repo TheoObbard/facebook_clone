@@ -15,7 +15,7 @@
   color: #fff;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   height: 42px;
   left: 10px;
@@ -115,7 +115,7 @@
   background-repeat: no-repeat;
   height: 34px;
   width: 34px;
-  margin-left: 9%;
+  margin-left: 5%;
 }
 .facebook_logo {
   background-image: image-url('facebook_logo.png');
@@ -192,7 +192,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 45%;
+  margin-left: 52.5%;
   padding-left: 10px;
 }
 

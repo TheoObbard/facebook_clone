@@ -21,20 +21,27 @@ class Head extends React.Component {
   displayFriendRequestButton () {
     for (let key in this.props.friendRequests) {
       if (this.props.friendRequests[key].requestee_id === this.props.user.id && this.props.friendRequests[key].requester_id === this.props.currentUser) {
-        return (<button className='main_friend_button' >Friend Request Sent</button>)
+        return (<div className='main_friend_button'>
+                  <div className='friend_head_icon'></div>
+                  <p>Friend Request Sent</p>
+                </div>)
       }
     }
 
     for (let key in this.props.friendships) {
       if (this.props.friendships[key].user_one_id === this.props.currentUser || this.props.friendships[key].user_two_id === this.props.currentUser) {
-        return (<button className='main_friend_button' >Friends</button>)
+        return (<div className='main_friend_button'>
+                  <div className='friend_check_icon'></div>
+                  <p>Friends</p>
+                </div>)
       }
     }
 
     return (
-      <button className='main_friend_button' onClick={() => this.props.addReq({ requester_id: this.props.currentUser, requestee_id: this.props.user.id })}>
-        Add Friend
-      </button>
+      <div className='main_friend_button' onClick={() => this.props.addReq({ requester_id: this.props.currentUser, requestee_id: this.props.user.id })}>
+        <div className='friend_head_icon'></div>
+        <p>Add Friend</p>
+      </div>
     )
   }
 
