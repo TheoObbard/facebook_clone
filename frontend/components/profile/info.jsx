@@ -37,7 +37,7 @@ class Info extends React.Component {
     let count = 0;
     for (let key in this.props.friendships) {
       count += 1;
-      if (count === 9) {
+      if (count === 10) {
         break;
       }
       friends.push(this.createFriendsArray(key))

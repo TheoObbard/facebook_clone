@@ -54,7 +54,7 @@ class NavBar extends React.Component {
   getPendingRequests() {
     const pending_requests = [];
     if (this.props.friendRequests !== undefined) {
-      for (var key in this.props.friendRequests) {
+      for (let key in this.props.friendRequests) {
         if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
           if (this.props.users[this.props.friendRequests[key].requester_id]) {
             pending_requests.push(

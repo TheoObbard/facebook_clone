@@ -63,6 +63,16 @@ class Head extends React.Component {
     this.props.updateProfilePicture(this.props.currentUser, formData);
   };
 
+  ifCoverPhoto() {
+    if (this.props.user.coverPhotoUrl) {
+      return (
+      <img className='cover_photo_pers'
+        src={this.props.user.coverPhotoUrl}
+      />
+      )
+    }
+  };
+
   render () {
     if (this.props.user === undefined) {
       return null;
@@ -105,6 +115,7 @@ class Head extends React.Component {
     )} else {
       cover_prof = (
         <div className='cover_photo'>
+          {this.ifCoverPhoto()}
           {this.displayFriendRequestButton()}
           <h1 className='user_name'>{this.props.user.name}</h1>
           <div className='profile_pic_border'>
