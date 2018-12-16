@@ -47,7 +47,7 @@ class User < ApplicationRecord
     class_name: :Post
 
   has_many :received_posts, 
-    foreign_key: :poster_id, 
+    foreign_key: :postee_id, 
     class_name: :Post
 
 
