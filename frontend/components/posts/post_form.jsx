@@ -29,7 +29,11 @@ class PostForm extends React.Component {
   };
 
   handleSubmit() {
-    this.props.addPost(this.state, this.props.user.id)
+    this.props.addPost(this.state, this.props.user.id).then(
+      this.setState({
+        body: ''
+      })
+    )
   }
 
   render() {
