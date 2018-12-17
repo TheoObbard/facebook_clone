@@ -8,6 +8,7 @@
 #  body              :string           not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  poster_id         :integer          not null
 #
 
 class Comment < ApplicationRecord
@@ -15,5 +16,9 @@ class Comment < ApplicationRecord
   belongs_to :post, 
     foreign_key: :post_id, 
     class_name: :Post
+
+  belongs_to :poster, 
+    foreign_key: :poster_id, 
+    class_name: :User
 
 end

@@ -50,6 +50,11 @@ class User < ApplicationRecord
     foreign_key: :postee_id, 
     class_name: :Post
 
+  has_many :comments, 
+    foreign_key: :poster_id, 
+    class_name: :Comment
+
+
 
   attr_reader :password
 
