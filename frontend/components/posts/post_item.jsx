@@ -10,7 +10,8 @@ class PostItem extends React.Component {
       <div className='post_container'>
         <p>{this.props.post.created_at}</p> 
         <h3>{this.props.post.body}</h3>
-        {/* <Comment /> */}
+        {/* <CommentForm /> */}
+        {/* <CommentIndex /> */}
       </div>
     )
   }
