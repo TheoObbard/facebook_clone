@@ -22,7 +22,7 @@ class Info extends React.Component {
     )
     if (this.props.users[correct_user_id]) {
       return (
-        <li className='friend_window'>
+        <li key={key} className='friend_window'>
           {this.verifyProfilePic(correct_user_id)}
           <p className='friend_name'>
             {this.props.users[correct_user_id].name}

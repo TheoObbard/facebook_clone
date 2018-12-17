@@ -5,7 +5,6 @@ import { addComment } from '../../actions/comment_actions';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.entities.users[state.session.id]
-    // user: state.entities.users[ownProps.match.params.userId] 
   }
 }
 

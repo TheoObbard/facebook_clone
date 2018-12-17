@@ -17,7 +17,12 @@ export const receiveComment = (payload) => {
 
 export const fetchComments = (postId) => dispatch => {
   return CommentsApiUtil.fetchComments(postId).then(
-    (comments) => dispatch(receiveComments(comments))
+    (comments) => 
+      {return new Promise((resolve, reject) => {
+        dispatch(receiveComments(comments));
+        resolve(comments);
+      })
+    }
   )
 };
 

@@ -8,7 +8,8 @@ const commentReducer = (oldState = {}, action) => {
       newState = Object.assign({}, oldState, action.payload.comments);
       return newState;
     case RECEIVE_COMMENTS:
-      return action.payload.comments || {};
+      newState = Object.assign({}, oldState, action.payload.comments);
+      return newState;
     default:
       return oldState;
   }

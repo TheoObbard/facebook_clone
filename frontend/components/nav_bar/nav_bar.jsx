@@ -58,7 +58,7 @@ class NavBar extends React.Component {
         if (this.props.currentUser.id === this.props.friendRequests[key].requestee_id) {
           if (this.props.users[this.props.friendRequests[key].requester_id]) {
             pending_requests.push(
-              <li className='list_item_for_req'>
+              <li key={key} className='list_item_for_req'>
                 <img className='requester_img' src={this.props.users[this.props.friendRequests[key].requester_id].profilePicUrl} alt="requester_pic"/>
                 <Link className='friend_req_name' to={`/user/${this.props.friendRequests[key].requester_id}`}>
                   {this.props.users[this.props.friendRequests[key].requester_id].name}

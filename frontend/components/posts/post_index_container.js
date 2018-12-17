@@ -5,10 +5,10 @@ import { fetchPosts } from '../../actions/post_actions';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.entities.users[state.session.id], 
-    posts: state.entities.posts
-    // user: state.entities.users[ownProps.match.params.userId] 
+    posts: state.entities.posts, 
+    users: state.entities.users
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
