@@ -147,4 +147,68 @@
 
 .post_date {
   font-size: 10px;
+  color: #616770;
+}
+
+.post_body {
+  margin: 10px;
+  padding-bottom: 20px; 
+  border-bottom: 1px solid #E5E5E5;
+}
+
+// -------------------------------
+
+// COMMENTS
+
+.comment_container {
+  width: auto;
+  display: flex; 
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.commenter_img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 8px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment_username_and_body {
+  background-color: #EFF1F3;
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+  width: 80%;
+  height: auto;
+  border-radius: 30px;
+}
+
+.post_item_commenter_name p {
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif; 
+  font-size: 12px;
+  font-weight: bolder;
+  cursor: pointer;
+  color: #385A97 !important;
+  padding-right: 5px;
+  padding-left: 10px;
+}
+
+.post_item_commenter_name p:hover {
+  text-decoration: underline;
+}
+
+.comment_username_and_body p {
+  font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif; 
+  font-size: 12px;
+  cursor: pointer;
+  color: #1D2128;
+}
+
+.comment_body {
+  width: auto;
+  max-width: 200px;
 }

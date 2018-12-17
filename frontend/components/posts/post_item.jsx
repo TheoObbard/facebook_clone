@@ -67,12 +67,16 @@ class PostItem extends React.Component {
     return (
       <div className='post_container'>
         {this.nameReady()}
-        <h3>{this.props.post.body}</h3>
+        <div className='post_body'>
+          <h3>{this.props.post.body}</h3>
+        </div>
+
+        <CommentIndex user={this.props.user}
+          post={this.props.post}
+        />
+        
         <CommentForm user={this.props.user}
                      post={this.props.post}
-        />
-        <CommentIndex user={this.props.user}
-                      post={this.props.post}
         />
       </div>
     )
