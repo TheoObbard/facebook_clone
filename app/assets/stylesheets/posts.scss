@@ -182,7 +182,8 @@
   display: flex; 
   flex-direction: row; 
   align-items: center;
-  width: 80%;
+  width: auto;
+  max-width: 80%;
   height: auto;
   border-radius: 30px;
 }
@@ -208,7 +209,42 @@
   color: #1D2128;
 }
 
+.commenter_name_text {
+  padding-right: 5px;
+}
+
 .comment_body {
   width: auto;
   max-width: 200px;
+}
+
+.comment_body p {
+  padding-right: 20px;
+}
+
+.comment_form_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment_form {
+  background-color: #F2F3F5;
+  border-radius: 30px;
+  width: 396px;
+}
+
+.comment_input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.comment_object {
+  margin-top: 8px;
+  background-color: #F2F3F5;
+  border: none; 
+  height: auto;
+  width: 366px;
+  margin-left: 10px;
+  font-size: 12px;
 }
