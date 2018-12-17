@@ -1,4 +1,4 @@
-// import { RECEIVE_COMMENT, RECEIVE_COMMENTS } from '../actions/comment_actions';
+import { RECEIVE_COMMENT, RECEIVE_COMMENTS } from '../actions/comment_actions';
 
 const commentReducer = (oldState = {}, action) => {
   Object.freeze(oldState);

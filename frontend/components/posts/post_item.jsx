@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentForm from '../comments/comment_form_container';
 
 class PostItem extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class PostItem extends React.Component {
       <div className='post_container'>
         <p>{this.props.post.created_at}</p> 
         <h3>{this.props.post.body}</h3>
-        {/* <CommentForm /> */}
+        <CommentForm user={this.props.user}/>
         {/* <CommentIndex /> */}
       </div>
     )

@@ -19,7 +19,9 @@ class PostIndex extends React.Component {
   createPostItems() {
     const allPosts = [];
     for (let key in this.props.posts) {
-      allPosts.push(<PostItem post={this.props.posts[key]}/>)
+      allPosts.push(<PostItem post={this.props.posts[key]}
+                              user={this.props.user}
+      />)
     }
     return allPosts.reverse()
   }
