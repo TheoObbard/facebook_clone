@@ -17,10 +17,21 @@ export const receivePost = (payload) => {
 
 export const fetchPosts = (userId) => dispatch => {
   return PostsApiUtil.fetchPosts(userId).then(
-    (posts) =>
+    (payload) =>
       { return new Promise((resolve, reject) => {
-        dispatch(receivePosts(posts));
-        resolve(posts)
+        dispatch(receivePosts(payload));
+      resolve(payload.posts)
+      })
+    }
+  )
+};
+
+export const fetchNewsfeedPosts = () => dispatch => {
+  return PostsApiUtil.fetchNewsfeedPosts().then(
+    (payload) => {
+      return new Promise((resolve, reject) => {
+        dispatch(receivePosts(payload));
+        resolve(payload.posts)
       })
     }
   )

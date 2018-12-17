@@ -20,14 +20,18 @@ class PostIndex extends React.Component {
     );
   }
 
-  getPoster(posts) {
-    for (let key in posts) {
-      if (this.state.entities.users[posts[key].poster_id]) {
-        return
-      } else {
-        this.props.fetchUser(posts[key].poster_id)
+  getPoster(promise) {
+    promise.then((posts) => {
+      console.log(posts.posts);
+      
+      for (let key in posts) {
+        if (this.props.users[posts[key].poster_id]) {
+          return
+        } else {
+          this.props.fetchUser(posts[key].poster_id)
+        }
       }
-    }
+    })
   }
 
   createPostItems() {

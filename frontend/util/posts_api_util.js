@@ -12,3 +12,10 @@ export const fetchPosts = (userId) => {
     method: 'GET'
   })
 };
+
+export const fetchNewsfeedPosts = () => {
+  return $.ajax({
+    url: '/api/posts', 
+    method: 'GET'
+  })
+}
