@@ -21,9 +21,7 @@ class PostIndex extends React.Component {
   }
 
   getPoster(promise) {
-    promise.then((posts) => {
-      console.log(posts.posts);
-      
+    promise.then((posts) => {      
       for (let key in posts) {
         if (this.props.users[posts[key].poster_id]) {
           return

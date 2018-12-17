@@ -182,7 +182,7 @@
 }
 
 .current_user_page_button {
-  margin: 12px;
+  margin: 12px 0px 12px 12px;
   height: 30px;
   background-color: #4469B0;
   border-radius: 3px;
@@ -192,7 +192,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 52.5%;
+  margin-left: 47.5%;
   padding-left: 10px;
 }
 
@@ -206,6 +206,36 @@
 }
 
 .current_user_page_button:hover {
+  background-color: #3D5E9E;
+}
+
+.home_button {
+  margin: 12px 5px 12px 0px;
+  height: 30px;
+  width: 60px;
+  background-color: #4469B0;
+  border-radius: 3px;
+  color: white;
+  font-family: "Lucida Grande", sans-serif;
+  font-weight: 200;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  border-left: 1px solid #3D5E9E;
+  border-right: 1px solid #3D5E9E;
+}
+
+.home_button_link {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  // text-align: center;
+  margin-right: 9px;
+}
+
+.home_button:hover {
   background-color: #3D5E9E;
 }
 

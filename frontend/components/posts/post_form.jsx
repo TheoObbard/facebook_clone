@@ -5,9 +5,11 @@ class PostForm extends React.Component {
     super(props)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleType = this.handleType.bind(this)
-    this.state = {
-      body: '', 
-      poster_id: this.props.currentUser.id
+    if (this.props.currentUser) {
+      this.state = {
+        body: '',
+        poster_id: this.props.currentUser.id
+      }
     }
   };
 

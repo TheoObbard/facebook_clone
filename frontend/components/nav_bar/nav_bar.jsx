@@ -94,6 +94,32 @@ class NavBar extends React.Component {
     )
   }
 
+  homeButton() {
+    return (
+      <div className='home_button'>
+        <Link
+          className='home_button_link'
+          to='/'
+        >Home</Link>
+      </div>
+    )
+  }
+
+  currentUserButton() {
+    return (
+      <div className='current_user_page_button'>
+        <img className='current_user_button_image'
+          src={this.props.currentUser.profilePicUrl}
+        />
+        <Link
+          className='current_user_button_link'
+          to={`/user/${this.props.currentUser.id}`}
+        >{this.props.currentUser.name}
+        </Link>
+      </div>
+    )
+  }
+
   render() {    
     const nav = (this.props.currentUser === undefined) ? (
       <div className='loggedout_menubar_container'>
@@ -106,16 +132,8 @@ class NavBar extends React.Component {
           to='/'
           className='fb_logo_small'
         />
-        <div className='current_user_page_button'>
-          <img className='current_user_button_image' 
-               src={this.props.currentUser.profilePicUrl}
-          />
-          <Link
-            className='current_user_button_link'
-            to={`/user/${this.props.currentUser.id}`} 
-          >{this.props.currentUser.name}
-          </Link>
-        </div>
+        {this.currentUserButton()}
+        {this.homeButton()}
         {this.pending_friends_button()}
         {this.logout_button()}
       </div>

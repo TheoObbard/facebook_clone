@@ -9,9 +9,11 @@ class NewsFeed extends React.Component {
 
   render() {
     return (
-      <div>
-        <PostForm user={this.props.currentUser}/>
-        <PostIndex user={this.props.currentUser}/>
+      <div className='newsfeed_page'>
+        <div className='newsfeed_post_content'>
+          <PostForm user={this.props.currentUser} />
+          <PostIndex user={this.props.currentUser} />
+        </div>
       </div>
     )
   }
