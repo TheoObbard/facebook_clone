@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :update] do 
       resources :friend_requests, only: [:index]
       resources :friendships, only: [:index]
-      resources :posts, only: [:create, :index]
+      resources :posts, only: [:create, :index] #this is for posting on someones wall
+    end
+    resources :posts, only: [:index] do #this is for the newsfeed posts
+      resources :comments, only: [:create, :index]
     end
     resource :session, only: [:create, :destroy]
     resources :friendships, only: [:create, :destroy] 
