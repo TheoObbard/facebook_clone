@@ -22,9 +22,9 @@ class Api::PostsController < ApplicationController
       @friendships.each do |friendship|
         if friendship.user_one_id == current_user.id 
           @friends << User.find(friendship.user_two_id)
-        else  
+        else
           @friends << User.find(friendship.user_one_id)
-        end 
+        end
       end
       @friends.each do |friend| 
         @posts.concat(friend.received_posts)

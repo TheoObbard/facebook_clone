@@ -38,13 +38,19 @@ class PostForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='post_form_container'>
         <form>
+          <div className='create_post_banner'>
+            <div className='post_icon'></div>
+            <p>Create Post</p>
+          </div>
           <label>
-            Create Post 
-            <textarea onChange={this.handleType()} placeholder={`What's on your mind, ${this.props.currentUser.name}`} name="" id="" cols="30" rows="10" value={this.state.body}></textarea>
-            <div onClick={this.handleSubmit}>
-              Post
+            <div className='post_inline_content'>
+              <img className='poster_profile_pic' src={this.props.currentUser.profilePicUrl} alt="User_photo" />
+              <textarea className='post_text_area' onChange={this.handleType()} placeholder={`What's on your mind, ${this.props.currentUser.name}`} name="" id="" cols="30" rows="10" value={this.state.body}></textarea>
+            </div>
+            <div className='post_button' onClick={this.handleSubmit}>
+              <p>Share</p>
             </div>
           </label>
         </form>

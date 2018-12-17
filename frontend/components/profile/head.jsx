@@ -172,8 +172,11 @@ class Head extends React.Component {
             params={this.props.params}
           />
 
-          <div>
+          <div className='main_post_column'>
             {this.canPostLogic()}
+            <div className='posts_spacer'>
+              <p>Posts</p>
+            </div>
             <PostIndex user={this.props.user}/>
           </div>
         </div>
