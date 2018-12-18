@@ -99,8 +99,9 @@
 }
 
 .poster_profile_pic {
-  background-size: contain;
+  object-fit: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
   margin-left: 8px;
   height: 40px;
   width: 40px;
@@ -168,7 +169,7 @@
 }
 
 .commenter_img {
-  background-size: contain;
+  object-fit: cover;
   background-repeat: no-repeat;
   margin-left: 8px;
   height: 32px;
