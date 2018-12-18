@@ -8,7 +8,6 @@ json.friendships do
   json.partial!  "api/friend/friendship", user: @user
 end 
 json.friends do 
-  # debugger    
   @user.two_friends.each do |friend| 
     json.partial!  "api/users/user", user: friend
   end
