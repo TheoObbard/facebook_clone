@@ -43,11 +43,11 @@ class User < ApplicationRecord
     class_name: :Friendship
 
   has_many :one_friends, 
-    through: :one_friendships, 
+    through: :two_friendships,  #YOU CHANGED THIS FROM ONE FRIENDSHIPS
     source: :user_one
 
   has_many :two_friends, 
-    through: :two_friendships, 
+    through: :one_friendships,   #YOU CHANGED THIS FROM TWO FRIENDSHIPS
     source: :user_two
 
   has_many :posted_posts, 
