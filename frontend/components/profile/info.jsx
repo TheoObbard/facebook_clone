@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FinePrint from './fine_print';
 
 class Info extends React.Component {
   constructor(props) {
@@ -199,14 +200,7 @@ class Info extends React.Component {
           </div>
         </div>
 
-        <div className='language'>
-          <p>English (US) · <span className='lang_link'>Español</span> · <span className='lang_link'>Português (Brasil)</span> · <span className='lang_link'>Français (France)</span> · <span className='lang_link'>Deutsch</span></p>
-        </div>
-
-        <div className='legal'>
-          <p>Privacy · Terms · Advertising · Ad Choices · <br/>Cookies · More <br/>
-            <span className='fb_legal'>Facebook © 2018</span><br/></p>
-        </div>
+        <FinePrint />
       </div>
     )
   }

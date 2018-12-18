@@ -192,6 +192,10 @@
 
 // Ads styling
 
+.right_hand {
+  width: 308px;
+}
+
 .ads {
   width: 308px;
   height: 520px;
@@ -199,7 +203,7 @@
   margin-left: 10px;
   margin-top: 12px;
   border: 1px solid #E4E6E8;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .flexo_banner {
@@ -235,7 +239,15 @@
   font-weight: bold;
   margin-top: 5px;
   width: 90%;
-  margin-left: 5%;
+  margin-left: 12px;
   padding-bottom: 10px;
   border-bottom: 1px solid #CCCED0;
+}
+
+.fine_print {
+  width: auto;
+}
+
+.ads_spacer {
+  height: 25px;
 }

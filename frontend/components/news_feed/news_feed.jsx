@@ -2,6 +2,7 @@ import React from 'react';
 import PostForm from '../posts/post_form_container';
 import PostIndex from '../posts/newsfeed_post_index_container';
 import { Link } from 'react-router-dom';
+import FinePrint from '../profile/fine_print';
 
 class NewsFeed extends React.Component {
   constructor(props) {
@@ -65,25 +66,29 @@ class NewsFeed extends React.Component {
             <PostForm user={this.props.currentUser} />
             <PostIndex user={this.props.currentUser} />
           </div>
-          <div className='ads'>
-            <br/>
-            <div className='explore'>Sponsored</div>
-            <br/>
-            <div className='flexo_pic'>
-              <div className='flexo_banner'></div>
-            </div>
-            <div>
-              <p className='ad_text'>
-                The Ultimate Driving Experience <br />
-                flexo.com
+          <div className='right_hand'>
+            <div className='ads'>
+              <br />
+              <div className='explore'>Sponsored</div>
+              <br />
+              <div className='flexo_pic'>
+                <div className='flexo_banner'></div>
+              </div>
+              <div>
+                <p className='ad_text'>
+                  The Ultimate Driving Experience <br />
+                  flexo.com
               </p>
-            </div>
+              </div>
 
-            <div className='burton_pic'></div>
-            <div>
-              <p className='ad_text'>
-                Winter is here.
-              </p>
+              <div className='burton_pic'></div>
+              <div>
+                <p className='ad_text'>
+                  Winter is here.
+                </p>
+              </div>
+              <div className='ads_spacer'></div>
+              <FinePrint />
             </div>
           </div>
         </div>
