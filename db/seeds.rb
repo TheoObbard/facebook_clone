@@ -9,23 +9,97 @@
 User.destroy_all
 
 User.create(
-  email: 'jim@dundermifflin.com', 
-  name: 'Jim Halpert', 
+  email: 'theo', 
+  name: 'Theo Obbard', 
   password: 'password', 
-  birthday: Date.new(2018, 12, 02), 
+  birthday: Date.new(1995, 01, 29), 
   gender: 'Male', 
-  job: 'paper sales', 
-  relationship_stat: 'it\'s complicated', 
-  location: 'Scranton, PA', 
+  job: 'Software Engineer', 
+  relationship_stat: 'In a relationship', 
+  location: 'Hillsborough, CA', 
 )
 
 User.create(
-  email: 'pam@dundermifflin.com', 
-  name: 'Pam Beasley', 
+  email: 'pat', 
+  name: 'Pat Xu', 
   password: 'password', 
-  birthday: Date.new(2018, 12, 02), 
+  birthday: Date.new(1995, 8, 02), 
+  gender: 'Male', 
+  job: 'Software Engineer', 
+  relationship_stat: 'In a relationship', 
+  location: 'SF Bay Area', 
+)
+
+User.create(
+  email: 'drew', 
+  name: 'Drew Waterman', 
+  password: 'password', 
+  birthday: Date.new(1996, 3, 11), 
   gender: 'Female', 
-  job: 'receptionist', 
-  relationship_stat: 'it\'s complicated', 
-  location: 'Scranton, PA', 
+  job: 'Software Engineer', 
+  relationship_stat: 'In a relationship', 
+  location: 'SF Bay Area', 
+)
+
+User.create(
+  email: 'tim', 
+  name: 'Tim Tregubov', 
+  password: 'password', 
+  birthday: Date.new(1948, 9, 16), 
+  gender: 'Male', 
+  job: 'Technical Director', 
+  relationship_stat: 'In a relationship', 
+  location: 'Hanover, NH', 
+)
+
+User.create(
+  email: 'rikey', 
+  name: 'Rikey Chen', 
+  password: 'password', 
+  birthday: Date.new(1994, 01, 01), 
+  gender: 'Male', 
+  job: 'Student', 
+  relationship_stat: 'Ill never tell', 
+  location: 'Oakland, CA', 
+)
+
+User.create(
+  email: 'joseph', 
+  name: 'Joseph Kung', 
+  password: 'password', 
+  birthday: Date.new(1994, 5, 06), 
+  gender: 'Male', 
+  job: 'Student', 
+  relationship_stat: 'It\'s complicated', 
+  location: 'SF, CA', 
+)
+
+User.create(
+  email: 'ryan', 
+  name: 'Ryan Mapa', 
+  password: 'password', 
+  birthday: Date.new(1980, 7, 09), 
+  gender: 'Male', 
+  job: 'TA at App Academy', 
+  location: 'SF, CA', 
+)
+
+User.create(
+  email: 'jason', 
+  name: 'Jason Feng', 
+  password: 'password', 
+  birthday: Date.new(1993, 9, 12), 
+  gender: 'Male', 
+  job: 'Software Engineer', 
+  location: 'SF, CA', 
+)
+
+User.create(
+  email: 'steven', 
+  name: 'Steven Le', 
+  password: 'password', 
+  birthday: Date.new(1993, 4, 18), 
+  gender: 'Male', 
+  job: 'Student', 
+  location: 'SF, CA', 
 )
