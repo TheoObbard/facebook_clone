@@ -63,7 +63,7 @@ class Info extends React.Component {
   }
 
   componentDidUpdate (oldProps) {
-    if (this.props.params.userId !== oldProps.params.userId) {
+    if (this.props.params.userId != oldProps.params.userId) {
       this.props.fetchFriends(this.props.user.id).then(
         () => {
 

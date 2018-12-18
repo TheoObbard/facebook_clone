@@ -42,7 +42,7 @@ class CommentIndex extends React.Component {
         />)
       }
     }
-    return allComments.reverse()
+    return allComments
   }
 
   render() {
