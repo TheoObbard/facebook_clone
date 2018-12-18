@@ -28,7 +28,7 @@ class Signup extends React.Component {
   handleDemo(e) {
     e.preventDefault();
     this.props.login({
-      email: 'jim@dundermifflin.com', 
+      email: 'theo', 
       password: 'password'
     })
   }

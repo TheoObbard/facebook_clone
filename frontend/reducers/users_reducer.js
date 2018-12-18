@@ -15,7 +15,7 @@ const usersReducer = (oldState = {}, action) => {
       newState = Object.assign({}, oldState, action.payload.user);
       return newState;
     case RECEIVE_FRIENDS:
-      newState = Object.assign({}, action.payload.friends);
+      newState = Object.assign({}, oldState, action.payload.friends);
       return newState;
     default:
       return oldState;

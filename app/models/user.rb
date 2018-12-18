@@ -21,7 +21,7 @@ class User < ApplicationRecord
   validates :email, :session_token, :name, :password_digest, presence: true
   validates :email, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
-  before_validation :ensure_session_token 
+  before_validation :ensure_session_token, :ensure_profile_pic
 
   has_one_attached :profile_picture
   has_one_attached :cover_photo
@@ -43,11 +43,11 @@ class User < ApplicationRecord
     class_name: :Friendship
 
   has_many :one_friends, 
-    through: :two_friendships,  #YOU CHANGED THIS FROM ONE FRIENDSHIPS
+    through: :two_friendships, 
     source: :user_one
 
   has_many :two_friends, 
-    through: :one_friendships,   #YOU CHANGED THIS FROM TWO FRIENDSHIPS
+    through: :one_friendships, 
     source: :user_two
 
   has_many :posted_posts, 
@@ -89,6 +89,13 @@ class User < ApplicationRecord
     self.save
     self.session_token
   end 
+
+  def ensure_profile_pic 
+    unless self.profile_picture.attached? == true
+      file = File.open('app/assets/images/default_profile.jpg')
+      self.profile_picture.attach(io: file, filename: 'default_profile.jpg')
+    end 
+  end
 
   def ensure_session_token 
     self.session_token ||= SecureRandom.urlsafe_base64(16)

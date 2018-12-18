@@ -16,7 +16,7 @@ class Api::PostsController < ApplicationController
       render "api/posts/index"
     else 
       @posts = []
-      @friends = []
+      @friends = [current_user] #the purpose for current user here is that it gives you your own posts on the newsfeed
       @friendships = current_user.one_friendships.clone
       @friendships += (current_user.two_friendships).clone
       @friendships.each do |friendship|

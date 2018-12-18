@@ -17,7 +17,7 @@ class PostIndex extends React.Component {
 
   componentDidMount() {
     if (this.props.currentUser) {
-      this.props.fetchPosts(this.props.currentUser.id).then(
+      this.props.fetchPosts(this.props.user.id).then(
         (posts) => this.getPoster(posts)
       );
     }
@@ -30,7 +30,7 @@ class PostIndex extends React.Component {
       for (let key in posts) {
         if (this.props.users[posts[key].poster_id]) {
           return
-        } else {          
+        } else {
           this.props.fetchUser(posts[key].poster_id)
         }
       }
@@ -39,13 +39,12 @@ class PostIndex extends React.Component {
 
   createPostItems() {
     const allPosts = [];
-    // this.props.fetchPosts(this.props.currentUser.id)    
     for (let key in this.props.posts) {
       let poster = this.props.users[this.props.posts[key].poster_id]
       allPosts.push(<PostItem key={key}
-                              post={this.props.posts[key]}
-                              user={this.props.user}
-                              poster={poster}
+        post={this.props.posts[key]}
+        user={this.props.user}
+        poster={poster}
       />)
     }
     return allPosts.reverse()

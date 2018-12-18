@@ -106,18 +106,20 @@ class NavBar extends React.Component {
   }
 
   currentUserButton() {
-    return (
-      <div className='current_user_page_button'>
-        <img className='current_user_button_image'
-          src={this.props.currentUser.profilePicUrl}
-        />
-        <Link
-          className='current_user_button_link'
-          to={`/user/${this.props.currentUser.id}`}
-        >{this.props.currentUser.name}
-        </Link>
-      </div>
-    )
+    if (this.props.currentUser) {
+      return (
+        <div className='current_user_page_button'>
+          <img className='current_user_button_image'
+            src={this.props.currentUser.profilePicUrl}
+          />
+          <Link
+            className='current_user_button_link'
+            to={`/user/${this.props.currentUser.id}`}
+          >{this.props.currentUser.name}
+          </Link>
+        </div>
+      )
+    }
   }
 
   render() {    
