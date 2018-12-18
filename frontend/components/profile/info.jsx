@@ -81,6 +81,37 @@ class Info extends React.Component {
     }
   };
 
+  figureOutMonth(monthNum) {
+    switch (monthNum) {
+      case 0:
+        return 'January';
+      case 1:
+        return 'February';
+      case 2:
+        return 'March';
+      case 3:
+        return 'April';
+      case 4:
+        return 'May';
+      case 5:
+        return 'June';
+      case 6:
+        return 'July';
+      case 7:
+        return 'August';
+      case 8:
+        return 'September';
+      case 9:
+        return 'October';
+      case 10:
+        return 'November';
+      case 11:
+        return 'December';
+      default:
+        break;
+    }
+  };
+
   render() {
     if (this.props.user.id === undefined) {
       return (<h1></h1>)
@@ -97,7 +128,7 @@ class Info extends React.Component {
       birthday = (
         <div className='user_info_item'>
           <div className='birthday_icon'></div>
-          <li>Born on {newDate.getMonth()}/{newDate.getDate()}/{newDate.getFullYear()}</li>
+          <li>Born on {this.figureOutMonth(newDate.getMonth())} {newDate.getDate()}</li>
         </div>
       )
     }
