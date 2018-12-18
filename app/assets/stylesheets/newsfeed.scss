@@ -8,8 +8,6 @@
 .newsfeed_post_content {
   width: 500px; 
   height: auto;
-  // margin-left: 21%;
-
 }
 
 .left_nav {
@@ -124,7 +122,7 @@
 .explore {
   font-family: "Lucida Grande", sans-serif;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 12px;
   color: #616770;
   padding-left: 10px;
   padding-bottom: 5px;
@@ -188,4 +186,56 @@
 
 .left_content_item:hover .jbs_icon {
   background-image: image-url('jobs_hov');
+}
+
+// ======================
+
+// Ads styling
+
+.ads {
+  width: 308px;
+  height: 520px;
+  background-color: #FFFFFF;
+  margin-left: 10px;
+  margin-top: 12px;
+  border: 1px solid #E4E6E8;
+  border-radius: 5px;
+}
+
+.flexo_banner {
+  background-color: #1E1E1E;
+  width: 100%;
+  height: 40px;
+  background-image: image-url('flexo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.flexo_pic, .burton_pic {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 90%;
+  margin-left: 5%;
+  height: 180px;
+}
+
+.flexo_pic {
+  background-image: image-url('GTR.jpg');
+}
+
+.burton_pic {
+  background-image: image-url('burton_ad.png');
+}
+
+.ad_text {
+  font-size: 12px;
+  color: #3C5B96;
+  font-weight: bold;
+  margin-top: 5px;
+  width: 90%;
+  margin-left: 5%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #CCCED0;
 }
