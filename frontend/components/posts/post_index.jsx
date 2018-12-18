@@ -16,7 +16,6 @@ class PostIndex extends React.Component {
   }
 
   componentDidMount() {
-    // console.log('jim is ', this.props.currentUser);
     if (this.props.currentUser) {
       this.props.fetchPosts(this.props.currentUser.id).then(
         (posts) => this.getPoster(posts)
@@ -31,9 +30,7 @@ class PostIndex extends React.Component {
       for (let key in posts) {
         if (this.props.users[posts[key].poster_id]) {
           return
-        } else {
-          console.log(posts[key].poster_id);
-          
+        } else {          
           this.props.fetchUser(posts[key].poster_id)
         }
       }

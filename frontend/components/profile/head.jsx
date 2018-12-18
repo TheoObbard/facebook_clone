@@ -76,9 +76,7 @@ class Head extends React.Component {
   };
 
   canPostLogic() {
-    if (this.props.user.id === this.props.currentUser) {
-      console.log('current user');
-      
+    if (this.props.user.id === this.props.currentUser) {      
       return (
         <PostForm user={this.props.user} />
       )
@@ -86,8 +84,6 @@ class Head extends React.Component {
     
     for (let key in this.props.friendships) {
       if (this.props.currentUser === this.props.friendships[key].user_one_id || this.props.currentUser === this.props.friendships[key].user_two_id) {
-        console.log('friend of user');
-
         return (
           <PostForm user={this.props.user} />
         )
