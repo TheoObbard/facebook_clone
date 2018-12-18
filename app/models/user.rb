@@ -21,7 +21,7 @@ class User < ApplicationRecord
   validates :email, :session_token, :name, :password_digest, presence: true
   validates :email, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
-  before_validation :ensure_session_token, :ensure_profile_pic
+  before_validation :ensure_session_token, :ensure_profile_and_cover
 
   has_one_attached :profile_picture
   has_one_attached :cover_photo
@@ -90,14 +90,14 @@ class User < ApplicationRecord
     self.session_token
   end 
 
-  def ensure_profile_pic 
+  def ensure_profile_and_cover 
     unless self.profile_picture.attached? == true
       file = File.open('app/assets/images/default_profile.jpg')
       self.profile_picture.attach(io: file, filename: 'default_profile.jpg')
     end 
     unless self.cover_photo.attached? == true
       file = File.open('app/assets/images/default_cover.png')
-      self.profile_picture.attach(io: file, filename: 'default_cover.png')
+      self.cover_photo.attach(io: file, filename: 'default_cover.png')
     end 
   end
 
