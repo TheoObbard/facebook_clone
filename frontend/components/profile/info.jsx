@@ -175,12 +175,12 @@ class Info extends React.Component {
           </ul>
         </div>
 
-        <div className='photos'>
+        {/* <div className='photos'>
           <div className='title'>
             <div className='photo_icon'></div>
             <h3>Photos</h3>
           </div>
-        </div>
+        </div> */}
 
         <div className='friends'>
           <div className='title'>
