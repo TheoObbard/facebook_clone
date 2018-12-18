@@ -12,6 +12,8 @@
 
 class Post < ApplicationRecord
 
+  validates :body, presence: true
+
   belongs_to :poster, 
     foreign_key: :poster_id, 
     class_name: :User
