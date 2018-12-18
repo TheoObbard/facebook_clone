@@ -7,15 +7,22 @@ class NewsFeed extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.fetchUser(this.props.session.id)
+  }
+
   render() {
-    return (
-      <div className='newsfeed_page'>
-        <div className='newsfeed_post_content'>
-          <PostForm user={this.props.currentUser} />
-          <PostIndex user={this.props.currentUser} />
+    if (this.props.session.id) {
+      return (
+        <div className='newsfeed_page'>
+          <div className='newsfeed_post_content'>
+            <PostForm user={this.props.currentUser} />
+            <PostIndex user={this.props.currentUser} />
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
+    return null;
   }
 }
 

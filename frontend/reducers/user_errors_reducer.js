@@ -6,7 +6,7 @@ const userErrorsReducer = (oldState = [], action) => {
     case RECEIVE_USER_ERRORS:
       return action.errors;
     case RECEIVE_CURRENT_USER:
-      return []
+      return [];
     default:
       return oldState;
   }

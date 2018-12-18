@@ -20,7 +20,7 @@ export const fetchPosts = (userId) => dispatch => {
     (payload) =>
       { return new Promise((resolve, reject) => {
         dispatch(receivePosts(payload));
-      resolve(payload.posts)
+        resolve(payload.posts)
       })
     }
   )

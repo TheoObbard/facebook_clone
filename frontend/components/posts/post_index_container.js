@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import { fetchPosts } from '../../actions/post_actions';
 import { fetchUser } from '../../actions/profile_actions';
+import { fetchFriends } from '../../actions/friend_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -14,7 +15,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchPosts: (userId) => dispatch(fetchPosts(userId)), 
-    fetchUser: (id) => dispatch(fetchUser(id))
+    fetchUser: (id) => dispatch(fetchUser(id)), 
+    fetchFriends: (id) => dispatch(fetchFriends(id))
   }
 };
 

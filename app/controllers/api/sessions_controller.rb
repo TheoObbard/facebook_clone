@@ -4,7 +4,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if @user
       login(@user)
-      render json: @user.id
+      render "api/users/show"
     else  
       render json: ["The email or phone number you've entered doesn't match any account."], status: 422
     end 

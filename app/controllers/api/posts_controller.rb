@@ -17,8 +17,8 @@ class Api::PostsController < ApplicationController
     else 
       @posts = []
       @friends = [current_user]
-      @friendships = current_user.one_friends
-      @friendships.concat(current_user.two_friends)
+      @friendships = current_user.one_friendships
+      @friendships.concat(current_user.two_friendships)
       @friendships.each do |friendship|
         if friendship.user_one_id == current_user.id 
           @friends << User.find(friendship.user_two_id)

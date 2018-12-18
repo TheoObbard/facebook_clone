@@ -34,13 +34,21 @@ class User < ApplicationRecord
     foreign_key: :requestee_id, 
     class_name: :FriendRequest
 
-  has_many :one_friends, 
+  has_many :one_friendships, 
     foreign_key: :user_one_id, 
     class_name: :Friendship
 
-  has_many :two_friends,  
+  has_many :two_friendships,  
     foreign_key: :user_two_id, 
     class_name: :Friendship
+
+  has_many :one_friends, 
+    through: :one_friendships, 
+    source: :user_one
+
+  has_many :two_friends, 
+    through: :two_friendships, 
+    source: :user_two
 
   has_many :posted_posts, 
     foreign_key: :poster_id, 

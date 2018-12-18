@@ -4,6 +4,7 @@ import PostItem from './post_item';
 class PostIndex extends React.Component {
   constructor(props) {
     super(props)
+    this.getPoster = this.getPoster.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -15,17 +16,24 @@ class PostIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts(this.props.user.id).then(
-      (posts) => this.getPoster(posts)
-    );
+    // console.log('jim is ', this.props.currentUser);
+    if (this.props.currentUser) {
+      this.props.fetchPosts(this.props.currentUser.id).then(
+        (posts) => this.getPoster(posts)
+      );
+    }
+    this.props.fetchFriends(this.props.currentUser.id);
+
   }
 
   getPoster(promise) {
-    promise.then((posts) => {      
+    promise.then((posts) => { 
       for (let key in posts) {
         if (this.props.users[posts[key].poster_id]) {
           return
         } else {
+          console.log(posts[key].poster_id);
+          
           this.props.fetchUser(posts[key].poster_id)
         }
       }
@@ -34,6 +42,7 @@ class PostIndex extends React.Component {
 
   createPostItems() {
     const allPosts = [];
+    // this.props.fetchPosts(this.props.currentUser.id)    
     for (let key in this.props.posts) {
       let poster = this.props.users[this.props.posts[key].poster_id]
       allPosts.push(<PostItem key={key}

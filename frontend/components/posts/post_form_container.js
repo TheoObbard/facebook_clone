@@ -4,8 +4,8 @@ import { addPost } from '../../actions/post_actions';
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.entities.users[state.session.id]
-    // user: state.entities.users[ownProps.match.params.userId] 
+    currentUser: state.entities.users[state.session.id], 
+    session: state.session
   }
 }
 

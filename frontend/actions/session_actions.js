@@ -25,6 +25,7 @@ export const logout = () => dispatch => {
 };
 
 export const receiveCurrentUser = (payload) => {
+  debugger
   return {
     type: RECEIVE_CURRENT_USER, 
     payload
