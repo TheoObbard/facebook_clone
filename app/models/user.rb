@@ -95,6 +95,10 @@ class User < ApplicationRecord
       file = File.open('app/assets/images/default_profile.jpg')
       self.profile_picture.attach(io: file, filename: 'default_profile.jpg')
     end 
+    unless self.cover_photo.attached? == true
+      file = File.open('app/assets/images/default_cover.png')
+      self.profile_picture.attach(io: file, filename: 'default_cover.png')
+    end 
   end
 
   def ensure_session_token 
