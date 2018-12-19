@@ -141,15 +141,19 @@ class NavBar extends React.Component {
       </div>
     ) : (
       <div className='nav'>
-        <Link
-          to='/'
-          className='fb_logo_small'
-        />
-        {this.searchBar()}
-        {this.currentUserButton()}
-        {this.homeButton()}
-        {this.pending_friends_button()}
-        {this.logout_button()}
+        <div className='left_nav_search'>
+            <Link
+              to='/'
+              className='fb_logo_small'
+            />
+            {this.searchBar()}
+        </div>
+        <div className='right_nav'>
+            {this.currentUserButton()}
+            {this.homeButton()}
+            {this.pending_friends_button()}
+            {this.logout_button()}
+        </div>
       </div>
     )
 
