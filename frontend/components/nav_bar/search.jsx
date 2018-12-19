@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchItem from './search_item';
 
 class Search extends React.Component {
   constructor(props) {
@@ -12,6 +13,25 @@ class Search extends React.Component {
     })
   };
 
+  searchDropDown() {
+    if (this.props.searchedUsers) {
+      const user = () => {
+        let users = []
+        for (let key in this.props.searchedUsers) {
+          users.push(<SearchItem key={key} user={this.props.searchedUsers[key]} />)
+        }
+        return users
+      } 
+      return (
+        <div className='search_modal'>
+          <ul>
+            {user()}
+          </ul>
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
       <div className='search_bar'>
@@ -19,6 +39,7 @@ class Search extends React.Component {
         <div className='search_bar_submit'>
           <div className='search_icon'></div>
         </div>
+        {this.searchDropDown()}
       </div>
     )
   }
