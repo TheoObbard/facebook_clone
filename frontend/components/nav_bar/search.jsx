@@ -1,6 +1,8 @@
 import React from 'react';
 import SearchItem from './search_item';
 import { Link } from 'react-router-dom';
+import { Redirect, Route, withRouter } from 'react-router-dom'; 
+
 
 class Search extends React.Component {
   constructor(props) {
@@ -13,6 +15,7 @@ class Search extends React.Component {
   }
 
   handleType(e) {
+    e.preventDefault();
     this.setState({ search: e.target.value });
     this.props.searchUsers({
       name_start: e.target.value
@@ -49,17 +52,19 @@ class Search extends React.Component {
   }
 
   handleSearchButton() {
-    const searchedId = this.props.currentUser.id
+    // const searchedId = this.props.currentUser.id
+    let first = []
     if (this.state.search !== '') {
       for (let key in this.props.searchedUsers) {
-        if (key === 1) {
-          searchedId = this.props.searchedUsers[key].id
+        // if (key === 1) {
+          first.push(key)
+
+          // searchedId = this.props.searchedUsers[key].id
         }
       }
-    }
-    console.log(searchedId);
-    
-    return searchedId;
+    console.log(first[0])
+    this.props.history.push(`/user/${first[0]}`)
+    // return <Redirect to={`/user/${first[0]}`}/>
   };
 
   render() {
@@ -67,9 +72,9 @@ class Search extends React.Component {
       <div className='search_bar'>
         <form className='search_form' onSubmit={this.handleSearchButton}>
           <input onChange={(e) => this.handleType(e)} className='search_bar_input' placeholder='Search' type="text" />
-          <div className='search_bar_submit'>
+          <button className='search_bar_submit'>
             <div className='search_icon'></div>
-          </div>
+          </button>
         </form>
         {this.searchDropDown()}
       </div>
@@ -77,4 +82,4 @@ class Search extends React.Component {
   }
 };
 
-export default Search;
+export default withRouter(Search);

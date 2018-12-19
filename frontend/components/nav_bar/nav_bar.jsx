@@ -136,7 +136,7 @@ class NavBar extends React.Component {
               to='/'
               className='fb_logo_small'
             />
-            <Search />
+            <Search history={this.props.history}/>
         </div>
         <div className='right_nav'>
             {this.currentUserButton()}
