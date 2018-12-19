@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchItem from './search_item';
 import { Link } from 'react-router-dom';
-import { Redirect, Route, withRouter } from 'react-router-dom'; 
+import { withRouter } from 'react-router-dom'; 
 
 
 class Search extends React.Component {

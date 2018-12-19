@@ -425,10 +425,11 @@ a {
 .search_bar_submit {
   background-color: #F5F6F7;
   width: 46px;
-  height: 25px;
+  height: 27px;
   border-right: 1px solid #3C5B96;
   border-top: 1px solid #3C5B96;
   border-bottom: 1px solid #3C5B96;
+  border-left: none;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
   display: flex; 
@@ -462,5 +463,5 @@ a {
 .search_form {
   display: flex; 
   flex-direction: row; 
-  
+
 }
