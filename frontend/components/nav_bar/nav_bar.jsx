@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Login from '../session/login_container';
+import Search from './search_container';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -122,17 +123,6 @@ class NavBar extends React.Component {
     }
   }
 
-  searchBar() {
-    return (
-      <div className='search_bar'>
-        <input className='search_bar_input' placeholder='Search - coming soon' type="text"/>
-        <div className='search_bar_submit'>
-          <div className='search_icon'></div>
-        </div>
-      </div>
-    )
-  }
-
   render() {    
     const nav = (this.props.currentUser === undefined) ? (
       <div className='loggedout_menubar_container'>
@@ -146,7 +136,7 @@ class NavBar extends React.Component {
               to='/'
               className='fb_logo_small'
             />
-            {this.searchBar()}
+            <Search />
         </div>
         <div className='right_nav'>
             {this.currentUserButton()}
