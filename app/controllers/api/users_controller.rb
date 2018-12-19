@@ -30,6 +30,13 @@ class Api::UsersController < ApplicationController
     end 
   end 
 
+  def index 
+    @potential_users = User.where("UPPER(name) LIKE UPPER(:query)", query: "%#{params[:name_start]}%")
+    @potential_users = @potential_users.take(8)
+    # debugger
+    # this needs to return all users whos name starts with whatever is passed in through props?
+  end 
+
   private 
 
   def user_params 
