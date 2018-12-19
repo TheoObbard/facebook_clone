@@ -52,20 +52,16 @@ class Search extends React.Component {
   }
 
   handleSearchButton() {
-    // const searchedId = this.props.currentUser.id
     let first = []
     if (this.state.search !== '') {
       for (let key in this.props.searchedUsers) {
-        // if (key === 1) {
           first.push(key)
-
-          // searchedId = this.props.searchedUsers[key].id
         }
       }
-    console.log(first[0])
     this.props.history.push(`/user/${first[0]}`)
-    // return <Redirect to={`/user/${first[0]}`}/>
-  };
+    this.cleanSearch()
+    
+    };
 
   render() {
     return (
