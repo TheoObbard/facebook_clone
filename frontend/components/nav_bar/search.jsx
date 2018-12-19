@@ -9,6 +9,7 @@ class Search extends React.Component {
       search: ''
     }
     this.handleSearchButton = this.handleSearchButton.bind(this)
+    this.cleanSearch = this.cleanSearch.bind(this)
   }
 
   handleType(e) {
@@ -18,13 +19,19 @@ class Search extends React.Component {
     })
   };
 
+  cleanSearch() {
+    this.setState({
+      search: ''
+    })
+  }
+
   searchDropDown() {
     if (this.state.search !== '') {
       const user = () => {
         let users = []
         for (let key in this.props.searchedUsers) {
           users.push(
-            <Link key={key} className='search_item' to={`/user/${this.props.searchedUsers[key].id}`}>
+            <Link key={key} onClick={this.cleanSearch} className='search_item' to={`/user/${this.props.searchedUsers[key].id}`}>
               <SearchItem key={key} user={this.props.searchedUsers[key]} />
             </Link>
           )

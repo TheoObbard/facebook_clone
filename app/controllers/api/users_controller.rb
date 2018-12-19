@@ -34,7 +34,7 @@ class Api::UsersController < ApplicationController
     @potential_users = User.where("UPPER(name) LIKE UPPER(:query)", query: "%#{params[:data][:name_start]}%")
     @potential_users = @potential_users.take(8)
     render "api/users/index"
-  end 
+  end
 
   private 
 
