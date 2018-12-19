@@ -150,15 +150,19 @@
 
 .login_button {
   margin: 12px;
-  height: 28px;
+  height: 26px;
   margin-top: 29px;
   background-color: #4469B0;
-  border-color: #29487d;
+  border: 1px solid #2A497B;
   color: white;
   border-radius: 3px;
   font-family: "Lucida Grande", sans-serif;
   font-weight: 200;
+  font-size: 12px;
   width: 50px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
 }
 
 .login_button:hover {

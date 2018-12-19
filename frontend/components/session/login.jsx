@@ -53,7 +53,9 @@ class Login extends React.Component {
             <div className='forgot_account'>Forgot account?</div>
           </label>
 
-          <button className='login_button' type='submit' onClick={this.handleSubmit}>Log In</button>
+          <div className='login_button' type='submit' onClick={this.handleSubmit}>
+            <div className='login_btn_text'>Log In</div>
+          </div>
         </form>
         {errors}
       </div>
