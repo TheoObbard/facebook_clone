@@ -122,6 +122,17 @@ class NavBar extends React.Component {
     }
   }
 
+  searchBar() {
+    return (
+      <div className='search_bar'>
+        <input className='search_bar_input' placeholder='Search' type="text"/>
+        <div className='search_bar_submit'>
+          <div className='search_icon'></div>
+        </div>
+      </div>
+    )
+  }
+
   render() {    
     const nav = (this.props.currentUser === undefined) ? (
       <div className='loggedout_menubar_container'>
@@ -134,6 +145,7 @@ class NavBar extends React.Component {
           to='/'
           className='fb_logo_small'
         />
+        {this.searchBar()}
         {this.currentUserButton()}
         {this.homeButton()}
         {this.pending_friends_button()}

@@ -116,6 +116,7 @@
   height: 34px;
   width: 34px;
   margin-left: 5%;
+  margin-right: 3px;
 }
 .facebook_logo {
   background-image: image-url('facebook_logo.png');
@@ -192,7 +193,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 47.5%;
+  margin-left: 16%;
   padding-left: 10px;
 }
 
@@ -396,4 +397,44 @@ a {
   margin-bottom: 10px; 
   padding-bottom: 10px;
   border-bottom: 1px solid #DDDFE2;
+}
+
+.search_bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.search_bar_input {
+  width: 393px;
+  height: 23px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  border-left: 1px solid #3C5B96;
+  border-top: 1px solid #3C5B96;
+  border-bottom: 1px solid #3C5B96;
+  border-right: none;
+  font-size: 14px;
+}
+
+.search_bar_submit {
+  background-color: #F5F6F7;
+  width: 46px;
+  height: 25px;
+  border-right: 1px solid #3C5B96;
+  border-top: 1px solid #3C5B96;
+  border-bottom: 1px solid #3C5B96;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search_icon {
+  background-image: image-url('search_icon');
+  height: 20px;
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
