@@ -1,9 +1,29 @@
 .search_modal {
-  width: 466;
-  height: 200px; // get rid of this later
-  background-color: red;
-  top: 200px;
-  left: 200px;
+  height: auto; // get rid of this later
+  background-color: white;
+  // top: 200px;
+  // left: 200px;
+  margin-top: 28px;
   position: absolute;
   z-index: 100;
+  border-radius: 3px;
+  box-shadow: 0 0 2px black;
+}
+
+.search_item {
+  width: 443px;
+  height: 32px;
+  display: flex; 
+  align-items: center;
+}
+
+.search_item:hover {
+  background-color: #ECF0F7;
+  border-radius: 3px;
+}
+
+.search_user_name {
+  font-size: 14px;
+  margin-left: 5px;
+  color: black;
 }

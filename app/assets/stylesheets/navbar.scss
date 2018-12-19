@@ -413,6 +413,8 @@ a {
   border-bottom: 1px solid #3C5B96;
   border-right: none;
   font-size: 14px;
+  position: relative;
+  z-index: 10;
 }
 
 .search_bar_submit {
