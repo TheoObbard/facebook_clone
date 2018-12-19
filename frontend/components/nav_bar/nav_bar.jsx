@@ -125,7 +125,7 @@ class NavBar extends React.Component {
   searchBar() {
     return (
       <div className='search_bar'>
-        <input className='search_bar_input' placeholder='Search' type="text"/>
+        <input className='search_bar_input' placeholder='Search - coming soon' type="text"/>
         <div className='search_bar_submit'>
           <div className='search_icon'></div>
         </div>
