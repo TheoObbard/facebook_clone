@@ -5,10 +5,15 @@ class Search extends React.Component {
     super(props)
   }
 
+  handleType(e) {
+    console.log(e.target.value);
+    
+  }
+
   render() {
     return (
       <div className='search_bar'>
-        <input className='search_bar_input' placeholder='Search' type="text" />
+        <input onChange={(e) => this.handleType(e)} className='search_bar_input' placeholder='Search' type="text" />
         <div className='search_bar_submit'>
           <div className='search_icon'></div>
         </div>
