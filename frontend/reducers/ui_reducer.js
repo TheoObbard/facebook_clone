@@ -4,7 +4,7 @@ const uiReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_SEARCH_QUERIES:
-      return action.payload; // very possible this needs updating
+      return action.payload;
     default:
       return oldState;
   }

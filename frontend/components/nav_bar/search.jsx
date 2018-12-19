@@ -7,8 +7,10 @@ class Search extends React.Component {
 
   handleType(e) {
     console.log(e.target.value);
-    
-  }
+    this.props.searchUsers({
+      name_start: e.target.value
+    })
+  };
 
   render() {
     return (
