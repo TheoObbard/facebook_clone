@@ -404,7 +404,7 @@ a {
 }
 
 .search_bar_input {
-  width: 393px;
+  width: 388px;
   height: 23px;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
@@ -414,7 +414,12 @@ a {
   border-right: none;
   font-size: 14px;
   position: relative;
+  padding-left: 6px;
   z-index: 10;
+}
+
+.search_bar_input p {
+  margin-left: 10px;
 }
 
 .search_bar_submit {
@@ -452,4 +457,10 @@ a {
   flex-direction: row;
   align-items: center;
   margin-right: 180px;
+}
+
+.search_form {
+  display: flex; 
+  flex-direction: row; 
+  
 }

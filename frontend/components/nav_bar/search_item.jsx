@@ -12,9 +12,7 @@ class SearchItem extends React.Component {
 
   render() {
     return (
-      <Link className='search_item' to={`/user/${this.props.user.id}`}>
-        <div className='search_user_name'>{this.props.user.name}</div>
-      </Link>
+      <div className='search_user_name'>{this.props.user.name}</div>
     )
   }
 };

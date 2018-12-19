@@ -8,13 +8,14 @@ class Search extends React.Component {
     this.state = {
       search: ''
     }
+    this.handleSearchButton = this.handleSearchButton.bind(this)
   }
 
   handleType(e) {
+    this.setState({ search: e.target.value });
     this.props.searchUsers({
       name_start: e.target.value
     })
-    this.setState({ search: e.target.value });
   };
 
   searchDropDown() {
@@ -22,7 +23,11 @@ class Search extends React.Component {
       const user = () => {
         let users = []
         for (let key in this.props.searchedUsers) {
-          users.push(<SearchItem key={key} user={this.props.searchedUsers[key]} />)
+          users.push(
+            <Link key={key} className='search_item' to={`/user/${this.props.searchedUsers[key].id}`}>
+              <SearchItem key={key} user={this.props.searchedUsers[key]} />
+            </Link>
+          )
         }
         return users
       } 
@@ -37,20 +42,28 @@ class Search extends React.Component {
   }
 
   handleSearchButton() {
-    if (this.props.searchedUsers[0] !== undefined) {
-      return this.props.searchedUsers[0].id
-    } else {
-      return this.props.currentUser.id
+    const searchedId = this.props.currentUser.id
+    if (this.state.search !== '') {
+      for (let key in this.props.searchedUsers) {
+        if (key === 1) {
+          searchedId = this.props.searchedUsers[key].id
+        }
+      }
     }
+    console.log(searchedId);
+    
+    return searchedId;
   };
 
   render() {
     return (
       <div className='search_bar'>
-        <input onChange={(e) => this.handleType(e)} className='search_bar_input' placeholder='Search' type="text" />
-        <Link to={`/user/${this.handleSearchButton()}`} className='search_bar_submit'>
-          <div className='search_icon'></div>
-        </Link>
+        <form className='search_form' onSubmit={this.handleSearchButton}>
+          <input onChange={(e) => this.handleType(e)} className='search_bar_input' placeholder='Search' type="text" />
+          <div className='search_bar_submit'>
+            <div className='search_icon'></div>
+          </div>
+        </form>
         {this.searchDropDown()}
       </div>
     )
