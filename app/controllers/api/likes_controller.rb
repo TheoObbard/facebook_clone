@@ -11,6 +11,19 @@ class Api::LikesController < ApplicationController
     end 
   end    
 
+  def index 
+    if params.include?(:post_id)
+      post = Post.find(params[:post_id])
+      @likes = post.likes
+    elsif params.include?(:comment_id) 
+      comment = Comment.find(params[:comment_id])
+      @likes = comment.likes
+    end
+    unless @likes.nil?
+      render "api/likes/index"
+    end 
+  end 
+
   def destroy
     @like = Like.find(params[:id])
     @like.delete 
