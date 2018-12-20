@@ -41,11 +41,22 @@ class Likes extends React.Component {
       if (checking.user_id === this.props.currentUser.id &&
         checking.object_type === this.props.object_type &&
         checking.object_id === this.props.object_id) {
-        this.props.removeLike(this.props.currentUser.id, checking.id)
-        return
+        return (
+          <div onClick={() => this.props.removeLike(this.props.currentUser.id, checking.id)}>
+            <div className='comment_like_button_remove'>
+              Like
+            </div>
+          </div>
+        )
       }
     }
-    this.props.addLike(this.props.currentUser.id, this.props.object_type, this.props.object_id)
+    return (
+      <div onClick={() => this.props.addLike(this.props.currentUser.id, this.props.object_type, this.props.object_id)}>
+        <div className='comment_like_button'>
+          Like
+        </div>
+      </div>
+    )
   }
 
   handleLikeButtonType() {
@@ -57,10 +68,8 @@ class Likes extends React.Component {
       )
     } else {
       return (
-        <div onClick={() => this.handleLikeLogic()}>
-          <div>
-            Like
-          </div>
+        <div>
+          {this.handleLikeLogic()}
         </div>
       )
     }
