@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :friend_requests, only: [:index]
       resources :friendships, only: [:index]
       resources :posts, only: [:create, :index] #this is for posting on someones wall
+      resources :likes, only: [:create, :destroy]
     end
     resources :posts, only: [:index] do #this is for the newsfeed posts
       resources :comments, only: [:create, :index]
