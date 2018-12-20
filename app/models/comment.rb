@@ -23,4 +23,7 @@ validates :body, presence: true
     foreign_key: :poster_id, 
     class_name: :User
 
+  has_many :likes, as: :object
+
+
 end

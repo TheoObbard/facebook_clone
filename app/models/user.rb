@@ -62,7 +62,9 @@ class User < ApplicationRecord
     foreign_key: :poster_id, 
     class_name: :Comment
 
-
+  has_many :liked_objects, 
+    foreign_key: :user_id, 
+    class_name: :Like
 
   attr_reader :password
 
