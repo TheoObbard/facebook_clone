@@ -9,18 +9,20 @@ class CommentItem extends React.Component {
   }
 
   countLikes() {
-    // count likes in state with this post id and return the sum
     let count = 0
     for (let key in this.props.likes) {
       if (this.props.likes[key].object_type === 'Comment' && this.props.likes[key].object_id === this.props.comment.id) {
         count += 1;
       }
     }
-    return (
-      <div>
-        {count}
-      </div>
-    )
+    if (count > 0) {
+      return (
+        <div className='comment_like_display_container'>
+          <div className='comment_liked_icon'></div>
+          {count}
+        </div>
+      )
+    }
   }
 
   componentDidMount() {
@@ -41,7 +43,7 @@ class CommentItem extends React.Component {
             </div>
 
             <div>
-              LIKE COUNT: {this.countLikes()}
+              {this.countLikes()}
             </div>
           </div>
           <Likes object_type='Comment'
