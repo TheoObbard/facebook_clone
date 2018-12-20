@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Likes from '../likes/likes_container';
 
 class CommentItem extends React.Component {
   constructor(props) {
@@ -17,6 +18,9 @@ class CommentItem extends React.Component {
               <p>{this.props.comment.body}</p>
             </div>
           </div>
+          <Likes object_type='Comment'
+                 object_id={this.props.comment.id}
+          />
         </div>
       )
     }

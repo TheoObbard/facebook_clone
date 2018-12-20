@@ -7,6 +7,7 @@ import Likes from '../likes/likes_container';
 class PostItem extends React.Component {
   constructor(props) {
     super(props)
+    this.countLikes = this.countLikes.bind(this)
   }
 
   parseDate(dateString) {
@@ -64,6 +65,25 @@ class PostItem extends React.Component {
     }
   };
 
+  countLikes() {
+    // count likes in state with this post id and return the sum
+    let count = 0
+    for (let key in this.props.likes) {
+      if (this.props.likes[key].object_type === 'Post' && this.props.likes[key].object_id === this.props.post.id) {
+        count += 1;
+      }
+    }
+    return (
+      <div>
+        {count}
+      </div>
+    )
+  }
+
+  componentDidMount() {
+    this.props.fetchPostLikes(this.props.post.id)
+  }
+
   render() {
     return (
       <div className='post_container'>
@@ -71,7 +91,12 @@ class PostItem extends React.Component {
         <div className='post_body'>
           <h3>{this.props.post.body}</h3>
         </div>
-        <Likes />
+        <div>
+          Likes count: {this.countLikes()}
+        </div>
+        <Likes object_type='Post'
+               object_id={this.props.post.id}
+        />
 
         <CommentIndex user={this.props.user}
           post={this.props.post}

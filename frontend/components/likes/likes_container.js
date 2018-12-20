@@ -9,4 +9,10 @@ const mapDispatchToProps = dispatch => {
   }
 };
 
-export default connect(null, mapDispatchToProps)(Likes)
+const mapStateToProps = state => {
+  return {
+    currentUser: state.entities.users[state.session.id]
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Likes)

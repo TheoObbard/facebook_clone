@@ -8,7 +8,8 @@ const likesReducer = (oldState = {}, action) => {
       newState = Object.assign({}, oldState, action.payload.likes);
       return newState;
     case RECEIVE_LIKES:
-      return action.payload.likes;
+      newState = Object.assign({}, oldState, action.payload.likes);
+      return newState;
     case REMOVE_LIKE:
       newState = Object.assign({}, oldState);
       delete newState[action.payload.likes.id]

@@ -42,6 +42,8 @@ class PostIndex extends React.Component {
     for (let key in this.props.posts) {
       let poster = this.props.users[this.props.posts[key].poster_id]
       allPosts.push(<PostItem key={key}
+        likes={this.props.likes}
+        fetchPostLikes={this.props.fetchPostLikes}
         post={this.props.posts[key]}
         user={this.props.user}
         poster={poster}
