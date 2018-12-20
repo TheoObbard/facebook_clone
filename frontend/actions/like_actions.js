@@ -21,8 +21,8 @@ export const fetchPostLikes = (post_id) => dispatch => {
   )
 };
 
-export const fetchCommentLikes = (Comment_id) => dispatch => {
-  return LikesApiUtil.fetchCommentLikes(Comment_id).then(
+export const fetchCommentLikes = (Comment_id, post_id) => dispatch => {
+  return LikesApiUtil.fetchCommentLikes(Comment_id, post_id).then(
     (likes) => dispatch(receiveLikes(likes))
   )
 };

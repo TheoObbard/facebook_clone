@@ -3,7 +3,7 @@ class Api::LikesController < ApplicationController
   def create 
     @like = Like.new(like_params)
     @like.user_id = current_user.id 
-    if @like.save    
+    if @like.save 
       render "api/likes/show"
       return
     else          
@@ -12,12 +12,12 @@ class Api::LikesController < ApplicationController
   end    
 
   def index 
-    if params.include?(:post_id)
-      post = Post.find(params[:post_id])
-      @likes = post.likes
-    elsif params.include?(:comment_id) 
+    if params.include?(:comment_id) 
       comment = Comment.find(params[:comment_id])
       @likes = comment.likes
+    elsif params.include?(:post_id)
+      post = Post.find(params[:post_id])
+      @likes = post.likes
     end
     unless @likes.nil?
       render "api/likes/index"

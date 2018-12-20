@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => {
     fetchPosts: (userId) => dispatch(fetchPosts(userId)), 
     fetchUser: (id) => dispatch(fetchUser(id)), 
     fetchFriends: (id) => dispatch(fetchFriends(id)), 
-    fetchPostLikes: (post_id) => dispatch(fetchPostLikes(post_id)) // oops bad syntax with snake case
+    fetchPostLikes: (postId) => dispatch(fetchPostLikes(postId)) 
   }
 };
 

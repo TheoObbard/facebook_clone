@@ -39,6 +39,8 @@ class CommentIndex extends React.Component {
                                       post={this.props.post}
                                       poster={poster}
                                       key={key}
+                                      likes={this.props.likes}
+                                      fetchCommentLikes={this.props.fetchCommentLikes}
         />)
       }
     }

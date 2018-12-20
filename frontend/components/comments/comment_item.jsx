@@ -5,6 +5,26 @@ import Likes from '../likes/likes_container';
 class CommentItem extends React.Component {
   constructor(props) {
     super(props)
+    this.countLikes = this.countLikes.bind(this)
+  }
+
+  countLikes() {
+    // count likes in state with this post id and return the sum
+    let count = 0
+    for (let key in this.props.likes) {
+      if (this.props.likes[key].object_type === 'Comment' && this.props.likes[key].object_id === this.props.comment.id) {
+        count += 1;
+      }
+    }
+    return (
+      <div>
+        {count}
+      </div>
+    )
+  }
+
+  componentDidMount() {
+    this.props.fetchCommentLikes(this.props.comment.id, this.props.post.id)
   }
 
   ensureFetchBeforeRender() {
@@ -18,6 +38,11 @@ class CommentItem extends React.Component {
               <p>{this.props.comment.body}</p>
             </div>
           </div>
+
+          <div>
+            LIKE COUNT: {this.countLikes()}
+          </div>
+
           <Likes object_type='Comment'
                  object_id={this.props.comment.id}
           />
