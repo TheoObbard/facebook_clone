@@ -8,6 +8,15 @@ class Likes extends React.Component {
 
   handleLikeLogic() {
     //if current user has not liked this thing
+    for (let key in this.props.likes) {
+      let checking = this.props.likes[key]
+      if (checking.user_id === this.props.currentUser.id && 
+          checking.object_type === this.props.object_type && 
+          checking.object_id === this.props.object_id) {
+        this.props.removeLike(this.props.currentUser.id, checking.id)
+        return
+      }
+    }
     this.props.addLike(this.props.currentUser.id, this.props.object_type, this.props.object_id)
     // else 
     // delete the like
