@@ -2,6 +2,7 @@ import React from 'react';
 import CommentForm from '../comments/comment_form_container';
 import CommentIndex from '../comments/comment_index_container';
 import { Link } from 'react-router-dom';
+import Likes from '../likes/likes_container';
 
 class PostItem extends React.Component {
   constructor(props) {
@@ -70,6 +71,7 @@ class PostItem extends React.Component {
         <div className='post_body'>
           <h3>{this.props.post.body}</h3>
         </div>
+        <Likes />
 
         <CommentIndex user={this.props.user}
           post={this.props.post}
