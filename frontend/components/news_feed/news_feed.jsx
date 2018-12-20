@@ -71,9 +71,11 @@ class NewsFeed extends React.Component {
               <br />
               <div className='explore'>Sponsored</div>
               <br />
-              <div className='flexo_pic'>
-                <div className='flexo_banner'></div>
-              </div>
+              <a href="http://www.flex-o.herokuapp.com" target="_blank">
+                <div className='flexo_pic'>
+                  <div className='flexo_banner'></div>
+                </div>
+              </a>
               <div>
                 <p className='ad_text'>
                   The Ultimate Driving Experience <br />
