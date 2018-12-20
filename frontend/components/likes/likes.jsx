@@ -20,6 +20,9 @@ class Likes extends React.Component {
                 <i class="far fa-thumbs-up"></i><span className='like_post_button_text'>Like</span>
               </div>
             </div>
+            <div className='post_like_button'>
+              <i class="far fa-comment-alt"></i><span className='like_post_button_text'>Comment</span>
+            </div>
           </div>
         )
       }
@@ -30,6 +33,9 @@ class Likes extends React.Component {
           <div className='post_like_button'>
             <i class="far fa-thumbs-up"></i><span className='like_post_button_text'>Like</span>
           </div>
+        </div>
+        <div className='post_like_button'>
+          <i class="far fa-comment-alt"></i><span className='like_post_button_text'>Comment</span>
         </div>
       </div>
     )
