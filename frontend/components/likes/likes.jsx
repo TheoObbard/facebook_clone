@@ -4,9 +4,10 @@ class Likes extends React.Component {
   constructor(props) {
     super(props)
     this.handleLikeLogic = this.handleLikeLogic.bind(this)
+    this.handlePostLikeLogic = this.handlePostLikeLogic.bind(this)
   };
 
-  handleLikeLogic() {
+  handlePostLikeLogic() {
     for (let key in this.props.likes) {
       let checking = this.props.likes[key]
       if (checking.user_id === this.props.currentUser.id && 
@@ -34,18 +35,32 @@ class Likes extends React.Component {
     )
   }
 
+  handleLikeLogic() {
+    for (let key in this.props.likes) {
+      let checking = this.props.likes[key]
+      if (checking.user_id === this.props.currentUser.id &&
+        checking.object_type === this.props.object_type &&
+        checking.object_id === this.props.object_id) {
+        this.props.removeLike(this.props.currentUser.id, checking.id)
+        return
+      }
+    }
+    this.props.addLike(this.props.currentUser.id, this.props.object_type, this.props.object_id)
+  }
+
   handleLikeButtonType() {
     if (this.props.object_type === 'Post') {
       return (
         <div>
-          {this.handleLikeLogic()}
+          {this.handlePostLikeLogic()}
         </div>
       )
     } else {
       return (
         <div onClick={() => this.handleLikeLogic()}>
-          {/* styling for comment button */}
-          Like Comment
+          <div>
+            Like
+          </div>
         </div>
       )
     }
