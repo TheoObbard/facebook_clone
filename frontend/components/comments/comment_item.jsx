@@ -19,7 +19,7 @@ class CommentItem extends React.Component {
       return (
         <div className='comment_like_display_container'>
           <div className='comment_liked_icon'></div>
-          {count}
+          <div className='count_digits_comment_likes'>{count}</div>
         </div>
       )
     }
