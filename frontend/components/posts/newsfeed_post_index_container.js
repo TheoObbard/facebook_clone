@@ -11,8 +11,8 @@ const mapStateToProps = (state) => {
     posts: state.entities.posts,
     users: state.entities.users, 
     userId: state.session.id, 
-    likes: state.entities.likes
-
+    likes: state.entities.likes,
+    comments: state.entities.comments
   }
 };
 

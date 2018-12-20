@@ -1,0 +1,36 @@
+.show_likes_on_post {
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+}
+
+.show_likes_on_post p {
+  color: #606770;
+  font-size: 12px;
+}
+
+.post_likes_container {
+  border-top: 1px solid #E5E5E5;
+  width: 100%;
+  height: 19px;
+  margin-top: 13px;
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.likes_on_post_icon {
+  background-image: image-url('thumbs-up');
+  height: 22px; 
+  width: 22px; 
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.show_comment_count {
+  color: #606770;
+  font-size: 12px;
+  font-family: "Lucida Grande", sans-serif;
+}

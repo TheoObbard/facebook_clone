@@ -47,6 +47,7 @@ class PostIndex extends React.Component {
         post={this.props.posts[key]}
         user={this.props.user}
         poster={poster}
+        comments={this.props.comments}
       />)
     }
     return allPosts.reverse()

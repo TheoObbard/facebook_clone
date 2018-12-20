@@ -12,7 +12,6 @@ const likesReducer = (oldState = {}, action) => {
       return newState;
     case REMOVE_LIKE:
       newState = Object.assign({}, oldState);
-      // debugger
       delete newState[Object.values(action.payload.likes)[0].id]
       return newState;
     default:
