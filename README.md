@@ -5,6 +5,4 @@
 [Design Documents](https://github.com/TheoObbard/facebook_clone/wiki)
 
 ![profile](https://imgur.com/mY78q5u)
-<img src="https://imgur.com/mY78q5u"
-     alt="profile_page"
-      />
+
