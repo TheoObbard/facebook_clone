@@ -24,13 +24,13 @@ The search bar helps users find new potential friends. They can log out from a d
 When you visit the profile of someone you aren't friends with, you won't have posting permissions. However users can view posts and send friend requests.  
 <br/>
 <a href="https://imgur.com/oDyuZMI"><img src="https://i.imgur.com/oDyuZMI.png" title="source: imgur.com" height="220" width="auto"/></a>
-<a href="https://imgur.com/ns0IwPb"><img src="https://i.imgur.com/ns0IwPb.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/ns0IwPb"><img src="https://i.imgur.com/ns0IwPb.png" title="source: imgur.com" height="220" width="auto"/></a>
 <a href="https://imgur.com/k7n5rxu"><img src="https://i.imgur.com/k7n5rxu.png" title="source: imgur.com" /></a>
 
 # User Authentication  
 Users can create an account, log into an existing account, or log into my demo account for a quick and easy way to play around with the site!  
 <br/>
-<a href="https://imgur.com/2FX4TYn"><img src="https://i.imgur.com/2FX4TYn.png" title="source: imgur.com" height="220" width="auto"/></a>
+<a href="https://imgur.com/2FX4TYn"><img src="https://i.imgur.com/2FX4TYn.png" title="source: imgur.com" /></a>
 
 # Newsfeed  
 The newsfeed pulls posts in chronological order from all the friends of the current user, as well as posts on walls of current users. A user can also write a new post from the newsfeed which will live on their own wall as well.   
@@ -40,4 +40,4 @@ The newsfeed pulls posts in chronological order from all the friends of the curr
 # Posting, Commenting, Liking  
 Any user who can view a post can comment on it, like the post, or like the comment. Users are limited to one like per item and can also unlike things. The button lives in a highlighted state when something has been liked by a user.  
 <br/>
-<a href="https://imgur.com/ALQKuMk"><img src="https://i.imgur.com/ALQKuMk.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/ALQKuMk"><img src="https://i.imgur.com/ALQKuMk.png" title="source: imgur.com" height="220" width="auto"/></a>
