@@ -1,24 +1,10 @@
-# README
+# Facebook-clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Build](https://face-network.herokuapp.com/#/)   
 
-Things you may want to cover:
+[Design Documents](https://github.com/TheoObbard/facebook_clone/wiki)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![profile](https://imgur.com/mY78q5u)
+<img src="https://imgur.com/mY78q5u"
+     alt="profile_page"
+      />
