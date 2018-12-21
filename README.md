@@ -14,23 +14,23 @@ The search bar helps users find new potential friends. They can log out from a d
 <br/> 
 * The search bar checks all names for inclusion of the entered characters. Clicking a search result with the mouse will take you to that users page. Hitting the enter key at any given time (or pressing the search button) will take you to the top user fitting the search.
 <br/> 
-<a href="https://imgur.com/ujCg99S"><img src="https://i.imgur.com/ujCg99S.png" title="source: imgur.com"  height="42" width="42"/></a>
+<a href="https://imgur.com/ujCg99S"><img src="https://i.imgur.com/ujCg99S.png" title="source: imgur.com"  height="220" width="auto"/></a>
 <br/> 
 * The friend request dropdown will grow as you have more pending friend requests, and will update in real time as you accept/deny requests.
 <br/>
-<a href="https://imgur.com/OmGXVTV"><img src="https://i.imgur.com/OmGXVTV.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/OmGXVTV"><img src="https://i.imgur.com/OmGXVTV.png" title="source: imgur.com" height="220" width="auto"/></a>
 
 # Friend Requesting  
 When you visit the profile of someone you aren't friends with, you won't have posting permissions. However users can view posts and send friend requests.  
 <br/>
-<a href="https://imgur.com/oDyuZMI"><img src="https://i.imgur.com/oDyuZMI.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/oDyuZMI"><img src="https://i.imgur.com/oDyuZMI.png" title="source: imgur.com" height="220" width="auto"/></a>
 <a href="https://imgur.com/ns0IwPb"><img src="https://i.imgur.com/ns0IwPb.png" title="source: imgur.com" /></a>
 <a href="https://imgur.com/k7n5rxu"><img src="https://i.imgur.com/k7n5rxu.png" title="source: imgur.com" /></a>
 
 # User Authentication  
 Users can create an account, log into an existing account, or log into my demo account for a quick and easy way to play around with the site!  
 <br/>
-<a href="https://imgur.com/2FX4TYn"><img src="https://i.imgur.com/2FX4TYn.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/2FX4TYn"><img src="https://i.imgur.com/2FX4TYn.png" title="source: imgur.com" height="220" width="auto"/></a>
 
 # Newsfeed  
 The newsfeed pulls posts in chronological order from all the friends of the current user, as well as posts on walls of current users. A user can also write a new post from the newsfeed which will live on their own wall as well.   
