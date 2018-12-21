@@ -42,4 +42,4 @@ The newsfeed pulls posts in chronological order from all the friends of the curr
 # Posting, Commenting, Liking  
 Any user who can view a post can comment on it, like the post, or like the comment. Users are limited to one like per item and can also unlike things. The button lives in a highlighted state when something has been liked by a user.  
 <br/>
-<a href="https://imgur.com/ALQKuMk"><img src="https://i.imgur.com/ALQKuMk.png" title="source: imgur.com" height="220" width="auto"/></a>
+<a href="https://imgur.com/ALQKuMk"><img src="https://i.imgur.com/ALQKuMk.png" title="source: imgur.com" height="300" width="auto"/></a>
